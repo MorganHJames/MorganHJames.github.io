@@ -32,6 +32,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
 <meta name="msapplication-TileImage" content="../assets/images/favicon/ms-icon-144x144.png">
   
+  <link href="../assets/css/lightbox.css" rel="stylesheet">
+  
   </head>
   <body js-component="page">
    <aside class="menu" js-component="menu">
@@ -148,11 +150,17 @@
   </header>
   
   <figure class="content__image ">
-  <img class="content__image__img" src="../assets/images/jerryquestposter.png" alt="">    
+  
+  <figure class="content__image ">
+    <a href="../assets/images/jerryquestposter.png" data-lightbox="image-1" data-title="The poster the team made for the ComX convention stand.">
+    <img class="content__image__img" src="../assets/images/jerryquestposter.png" alt="">
+    </a>
+    
+	  
   </figure>
            
   <section class="content__section" itemprop="articleBody">
-              <p>Jerry's Quest is a collaboration between other students and I. We had to create a game following a game design document and suit it towards a certain age group. I was the lead programmer and unity developer on this project. Here is the <a href="https://github.com/MorganHJames/JerrysQuest">github</a> for the project and here is a <a href="https://github.com/MorganHJames/JerrysQuest/archive/master.zip" download>download</a> for the unity files or you can just <a href="http://download2230.mediafire.com/us36burdd9jg/01u1uprj1o40h7s/PC+Release.zip" download>download</a> the game.</p>
+              <p>Jerry's Quest is a collaboration between other students and I. We had to create a game following a game design document and suit it towards a certain age group. I was the lead programmer and unity developer on this project. The game was featured at ComX a convention hosted by the University of Gloucestershire. Here is the <a href="https://github.com/MorganHJames/JerrysQuest">github</a> for the project and here is a <a href="https://github.com/MorganHJames/JerrysQuest/archive/master.zip" download>download</a> for the unity files or you can just <a href="http://download2230.mediafire.com/us36burdd9jg/01u1uprj1o40h7s/PC+Release.zip" download>download</a> the game.</p>
          
          
          
@@ -289,6 +297,9 @@
         <i class="elevator__icon fa fa-angle-up" aria-hidden="true"></i>
       </div>
     </div>
+    
+    <script src="../assets/js/lightbox-plus-jquery.js"></script>
+    
   </body>
  <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/hammer.min.js"></script>
