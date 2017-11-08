@@ -1761,6 +1761,13 @@ body.menu--open .header--sticky {
 	padding-top: 25px;
 	height: 0;
 }
+.pdfWrapper {
+	position: relative;
+	padding-bottom: 0%; /* 16:9 */
+	padding-top: 0px;
+	height: 842px;
+	width: 100%;
+}
 .videoWrapper iframe {
 	position: absolute;
 	top: 0;
