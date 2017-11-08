@@ -1765,7 +1765,7 @@ body.menu--open .header--sticky {
 	position: relative;
 	padding-bottom: 0%; /* 16:9 */
 	padding-top: 0px;
-	height: 842px;
+	height: 1000px;
 	width: 100%;
 }
 .videoWrapper iframe {
