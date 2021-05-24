@@ -43,6 +43,8 @@ header{
     color: var(--current-text-color);
     width: 100%;
     margin: 0em auto;
+    margin-top: 0.5em;
+    margin-bottom: -2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,7 +63,7 @@ body{
 /*Name*/
 #name{
     font-weight: bold;
-    font-size: 2em;
+    font-size: 2.5em;
     color: var(--current-title-text-color);
     animation: headerIntro;
     animation-duration: var(--intro-animation-length);
@@ -69,8 +71,8 @@ body{
 
 /*Brightness swap*/
 #brightswap img{
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     cursor: pointer;
     animation: headerIntro;
     animation-duration: var(--intro-animation-length);
@@ -98,6 +100,7 @@ body{
 /*Slogan*/
 #slogan {
     font-weight: bold;
+    font-size: 1.25em;
     animation: sloganIntro;
     animation-duration: var(--slogan-intro-animation-length);
 }
