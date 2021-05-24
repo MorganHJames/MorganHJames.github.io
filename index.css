@@ -1,0 +1,148 @@
+/*Root*/
+:root{
+    --main-font-family: Arial;
+    --watermark-font: Arial;
+
+    --current-background-color: #111216;
+    --dark-background-color: #111216;
+    --light-background-color: #fafafa;
+
+    --current-text-color: #999;
+    --dark-text-color: #999;
+    --light-text-color: #111;
+
+    --current-title-text-color: #eee;
+    --dark-title-text-color: #eee;
+    --light-title-text-color: #111;
+
+    --current-hover-text-color: #ddd;
+    --dark-hover-text-color: #ddd;
+    --light-hover-text-color: #000;
+
+    --current-accent-color: #222;
+    --dark-accent-color: #222;
+    --light-accent-color: #ccc;
+
+    --watermark-opacity: 0.03;
+    --intro-animation-length: 0.5s;
+    --slogan-intro-animation-length: 1.5s;
+}
+
+/*HTML*/
+html{
+    background-color: var(--current-background-color);
+}
+
+/*All*/
+*{
+    font-family: var(--main-font-family);
+}
+
+/*Header*/
+header{
+    color: var(--current-text-color);
+    width: 100%;
+    margin: 0em auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Body*/
+body{
+    color: var(--current-text-color);
+    width: 75%;
+    margin: 0em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*Name*/
+#name{
+    font-weight: bold;
+    font-size: 2em;
+    color: var(--current-title-text-color);
+    animation: headerIntro;
+    animation-duration: var(--intro-animation-length);
+}
+
+/*Brightness swap*/
+#brightswap img{
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    animation: headerIntro;
+    animation-duration: var(--intro-animation-length);
+}
+
+@keyframes headerIntro {
+    0% {
+      opacity: 0;
+      transform: translateY(-10em);
+    }
+    50% {
+      opacity: 0.2;
+      transform: translateY(-5em);
+    }
+    90% {
+      opacity: 0.9;
+      transform: translateY(1em);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY((0em));
+    }
+}
+
+/*Slogan*/
+#slogan {
+    font-weight: bold;
+    animation: sloganIntro;
+    animation-duration: var(--slogan-intro-animation-length);
+}
+@keyframes sloganIntro {
+    0% {
+      opacity: 0;
+      transform: translateX(-10em);
+    }
+    40%{
+        opacity: 0;
+        transform: translateX(-10em);
+    }
+    90%{
+        opacity: 0.9;
+        transform: translateX(0.5em);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0em);
+    }
+}
+
+/*Watermark*/
+.watermark{
+    position: fixed;
+    margin: 0em auto;
+    font-weight: bolder;
+    font-family: var(--watermark-font);
+    opacity: var(--watermark-opacity);
+    overflow: hidden;
+    z-index: -1000;
+    cursor: default;
+}
+.watermark:first-child{
+    font-size: 10em;
+    bottom: 0.5em;
+    left: 0em;
+}
+.watermark:nth-child(2){
+    font-size: 20em;
+    top: 0.5em;
+    right: 0em;
+}
+.watermark:nth-child(3){
+    font-size: 2em;
+    bottom: 0em;
+    right: 0em;
+}
