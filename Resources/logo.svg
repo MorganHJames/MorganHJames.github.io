@@ -1,1 +1,22 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1154.9 1461.61"><defs><style>.cls-1{fill:none;stroke:#000;stroke-width:37px;}.cls-1,.cls-2{stroke-miterlimit:10;}.cls-2{fill:#fff;stroke:#fff;stroke-width:0.75px;}.cls-3{font-size:950px;font-family:Poppins-Bold, Poppins;font-weight:700;}</style></defs><rect class="cls-1" x="34.74" y="18.5" width="1101.66" height="1101.66"/><rect class="cls-2" x="0.38" y="551.68" width="579.73" height="608.82"/><text class="cls-3" transform="translate(144.39 885.91)">M</text></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:60;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:20;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;}
+</style>
+<polyline class="st0" points="38.92,276.55 38.92,38.06 473.08,38.06 473.08,473.94 240.46,473.94 "/>
+<polyline class="st1" points="38.92,262.66 38.92,38.06 473.08,38.06 473.08,473.94 256,473.94 "/>
+<g>
+	<g>
+		<polygon points="328.22,393.42 328.22,286.02 288.17,393.42 224.2,393.42 183.78,285.46 183.78,393.42 101.71,393.42 
+			101.71,118.58 191.77,118.58 256.5,278.27 320.57,118.58 410.29,118.58 410.29,393.42 		"/>
+		<path class="st2" d="M400.29,128.58v254.83h-62.07V230.59l-56.99,152.83h-50.09l-57.35-153.19v153.19h-62.07V128.58h73.33
+			l71.51,176.42l70.79-176.42H400.29 M420.29,108.58h-20h-72.96h-13.53l-5.04,12.55l-52.32,130.4l-52.88-130.46l-5.06-12.49h-13.47
+			h-73.33h-20v20v254.83v20h20h62.07h20v-20v-42.73l18.62,49.74l4.86,12.99h13.87h50.09h13.89l4.85-13.01l18.25-48.95v41.96v20h20
+			h62.07h20v-20V128.58V108.58L420.29,108.58z"/>
+	</g>
+</g>
+</svg>
