@@ -9,6 +9,7 @@ let darkHover = getComputedStyle(document.documentElement).getPropertyValue("--d
 let lightHover = getComputedStyle(document.documentElement).getPropertyValue("--light-hover-text-color");
 let darkAccent = getComputedStyle(document.documentElement).getPropertyValue("--dark-accent-color");
 let lightAccent = getComputedStyle(document.documentElement).getPropertyValue("--light-accent-color");
+
 function swapBrightness() {
   let icon = document.querySelector('#brightswap img');
 
