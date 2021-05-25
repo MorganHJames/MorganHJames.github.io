@@ -1,7 +1,7 @@
 /*Root*/
 :root{
-    --main-font-family: Arial;
-    --watermark-font: Arial;
+    --main-font-family: "poppins", helvetica, arial;
+    --watermark-font: "nunito", helvetica, arial;
 
     --current-background-color: #111216;
     --dark-background-color: #111216;
@@ -43,8 +43,8 @@ header{
     color: var(--current-text-color);
     width: 100%;
     margin: 0em auto;
-    margin-top: 0.5em;
-    margin-bottom: -2em;
+    margin-top: 0em;
+    margin-bottom: -2.5em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,7 +137,7 @@ body{
 .watermark:first-child{
     font-size: 10em;
     bottom: 0.5em;
-    left: 0em;
+    left: 0.15em;
 }
 .watermark:nth-child(2){
     font-size: 20em;
