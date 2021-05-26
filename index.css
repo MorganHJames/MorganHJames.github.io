@@ -2,6 +2,7 @@
 :root{
     --main-font-family: "poppins", helvetica, arial;
     --watermark-font: "nunito", helvetica, arial;
+    --menu-font: "roboto mono", monospace;
 
     --current-background-color: #111216;
     --dark-background-color: #111216;
@@ -38,6 +39,12 @@ html{
     font-family: var(--main-font-family);
 }
 
+/*Link*/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /*Header*/
 header{
     color: var(--current-text-color);
@@ -67,6 +74,15 @@ body{
     color: var(--current-title-text-color);
     animation: headerIntro;
     animation-duration: var(--intro-animation-length);
+}
+
+/*Name*/
+section {
+    background-color: transparent;
+}
+
+section h2 {
+    color: var(--current-title-text-color);
 }
 
 /*Brightness swap*/
@@ -130,22 +146,338 @@ body{
     font-weight: bolder;
     font-family: var(--watermark-font);
     opacity: var(--watermark-opacity);
-    overflow: hidden;
     z-index: -1000;
+    overflow: visible;
     cursor: default;
 }
 .watermark:first-child{
+    width: 100%;
     font-size: 10em;
     bottom: 0.5em;
-    left: 0.15em;
+    animation: scroll-right 30s linear infinite;
 }
 .watermark:nth-child(2){
+    width: 100%;
     font-size: 20em;
     top: 0.5em;
-    right: 0em;
+    animation: scroll-left 60s linear infinite;
 }
 .watermark:nth-child(3){
     font-size: 2em;
-    bottom: 0em;
     right: 0em;
+    bottom: 0em;
+}
+@keyframes scroll-left {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+}
+@keyframes scroll-right {
+    0%   {
+    transform: translateX(-100%); 		
+    }
+    100% {
+    transform: translateX(100%); 
+    }
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+/*Track*/
+::-webkit-scrollbar-track {
+    background: --current-accent-color;
+}
+/*Handle*/
+::-webkit-scrollbar-thumb {
+    background: --current-text-color;
+}
+/*Handle on hover*/
+::-webkit-scrollbar-thumb:hover {
+    background: --current-hover-text-color;
+}
+
+/*Menu*/
+#menu {
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    color: gray;
+    animation: headerIntro;
+    animation-duration: var(--intro-animation-length);
+}
+#menu a {
+    font-family: var(--menu-font);
+    font-size: 1.5em;
+    font-weight: light;
+    margin-right: 2em;
+    padding: 5px;
+    border: 2px solid var(--current-accent-color);
+    box-shadow: 5px 5px 0px 2px var(--current-accent-color);
+    white-space: nowrap;
+}
+#menu a:hover {
+    border: 2px solid var(--current-text-color);
+    color: var(--current-hover-text-color);
+    background-color: var(--current-accent-color);
+    box-shadow: 0px 0px 0px 0px;
+    transition: all 0.4s;
+}
+
+
+/*Visible*/
+.visible {
+    display: block;
+}
+
+/*Section*/
+section h2 {
+    color: var(--current-text-title-color);
+}
+section h4 {
+    display: flex;
+    font-size: 0.9rem;
+    margin-left: 1em;
+    justify-content: space-between;
+    font-weight: bolder;
+    color: var(--current-hover-text-color);
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
+section h4 > img {
+    height: 3em;
+    width: 3em;
+    opacity: 0.2;
+    display: none;
+    margin-top: -1em;
+    box-sizing: border-box;
+    padding: 0.5em;
+    background-color: aliceblue;
+}
+
+/*Class Section*/
+.section {
+    display: none;
+}
+@keyframes section {
+    0% {
+      opacity: 0;
+      transform: translateY(20rem);
+    }
+    100% {
+      transform: translateY(0rem);
+    }
+}
+
+/*Article*/
+article {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 0.5fr));
+    gap: 2em;
+}
+article section {
+    min-width: 22em;
+    background-color: var(--current-background-color);
+}
+article object {
+    height: 2.5em;
+    width: 1.5em;
+    margin-right: 0.5em;
+}
+article > section > ul {
+    list-style-type: none;
+    font-size: 0.8em;
+    padding-left: 1em;
+    margin: -1em 0em 1em 0em;
+}
+article li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-family: var(--menu-font);
+}
+
+/*SVG*/
+svg {
+    fill: blue;
+}
+
+/*Tags*/
+.tags {
+    display: flex;
+    flex-direction: column;
+}
+.tags > span {
+    margin-right: 1em;
+    font-size: 0.7em;
+    opacity: 0.5;
+    padding: 0.3em 0.7em;
+    font-family: "roboto mono";
+}   
+.tags > span:hover {
+    opacity: 0.9;
+}
+
+/*Active*/
+.active > * {
+    color: var(--current-background-color) !important;
+    background-color: var(--current-text-color) !important;
+    padding: 0.5em;
+    border: 2px solid var(--current-text-color) !important;
+    box-shadow: 1px 1px 0px 2px var(--current-text-color) !important;
+}
+.active > *:hover {
+    box-sizing: border-box;
+    background-color: transparent;
+    padding: 0.5em;
+}
+
+/*Footer*/
+footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+/*Go back button*/
+#go-back-button {
+    opacity: 0.8;
+    font-family: var(--menu-font);
+    outline: none;
+    background-color: var(--current-text-color);
+    color: var(--current-background-color);
+    position: relative;
+    top: -2em;
+    padding: 1em;
+    border: none;
+    display: none;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/*About me section*/
+#about-me-section {
+    width: 75%;
+    line-height: 1.7em;
+}
+#about-me-section a {
+    display: inline-block;
+    padding: 0.5em;
+    font-size: 0.9em;
+    color: var(--current-hover-text-color);
+    background-color: var(--current-accent-color);
+    box-shadow: 0px 0px 3px 1px var(--current-accent-color);
+    margin: 1em 0em 0em 0em;
+    opacity: 0.7;
+    box-shadow: 5px 5px 0px 3px, 0px 0px 0px 3px;
+}
+#about-me-section a:hover {
+    transition: all 0.4s;
+    color: var(--current-background-color);
+    background-color: var(--current-text-color);
+    box-shadow: 0px 0px 0px 0px var(--current-accent-color),3px 3px 0px 0px var(--current-accent-color);
+    opacity: 1;
+}
+
+/*Projects section*/
+#projects-section {
+    display: none;
+}
+
+/*Projects wrapper*/
+#projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 0.5fr));
+    gap: 3em;
+}
+#projects-wrapper > div {
+    background-color: var(--current-background-color);
+    padding: 0 1em;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0px 0px 0px 5px var(--current-accent-color), 15px 15px 0px 5px var(--current-accent-color);
+}
+#projects-wrapper > div:hover {
+    box-shadow: 0px 0px 0px 5px, 0px 0px 0px 5px;
+    transition: all 0.4s;
+}
+#projects-wrapper > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 2em;
+}
+#projects-wrapper > div h3 em {
+    font-size: 0.7em;
+    font-weight: 400;
+    word-wrap: none;
+    white-space: nowrap;
+}
+#projects-wrapper > div h3 a:hover {
+    text-decoration: underline;
+    opacity: 0.5;
+    position: relative;
+    top: -2px;
+}
+#projects-wrapper img {
+    width: 200px;
+    height: 300px;
+    padding: 1em;
+    margin: 1em 1em 1em 2em;
+    opacity: 0.8;
+    box-shadow: 2px 2px 0px 4px rgba(240, 240, 240, 0.5), -2px -2px 0px 0px var(--current-accent-color);
+}
+#projects-wrapper > div > span {
+    border: 1px solid var(--current-accent-color);
+    text-align: center;
+    width: 50%;
+    margin: 1em auto;
+}
+
+/*Resume*/
+#resume-section {
+    width: 75%;
+    line-height: 1.7em;
+}
+
+/*Contact me section*/
+#contact-me-section > div {
+    margin-left: 1em;
+}
+#contact-me-section > div > * {
+    min-width: max-content;
+    opacity: 0.5;
+    margin-right: 2em;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+#contact-me-section > div > *:hover {
+    opacity: 1;
+}
+#contact-me-section > div {
+    height: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+}
+#contact-me-section > div > * {
+    margin-top: 1em;
+    box-shadow: 5px 5px 0px 2px var(--current-accent-color);
+    padding: 0.5em;
+    border: 2px solid var(--current-accent-color);
+}
+#contact-me-section > div > *:hover {
+    box-shadow: 0px 0px 0px 0px;
+    border: 2px solid var(--current-text-color);
+    color: var(--text-color);
+    background-color: var(--current-accent-color);
+    transition: all 0.4s;
+}
+#contact-me-section > div a i {
+    color: var(--text-color);
+    margin-right: 0.5em;
+    opacity: 1;
 }
