@@ -108,12 +108,14 @@ function displaySection(link,section) {
   };
 }
 
-window.onload = (event) => {
-  displaySection("projects","projects-section");
-};
+function startSection(link,section) {
+  var elem = document.getElementById(link);
+  elem.onclick.apply(elem);
+}
 
 swapBrightness();
 displaySection("about-me","about-me-section");
 displaySection("projects","projects-section");
 displaySection("resume","resume-section");
 displaySection("contact-me","contact-me-section");
+startSection("projects","projects-section");
