@@ -238,6 +238,9 @@ section h2 {
 section h2 {
     color: var(--current-text-title-color);
 }
+section p {
+    font-size: 1.25rem;
+}
 section h4 {
     display: flex;
     font-size: 0.9rem;
@@ -360,7 +363,7 @@ footer {
 
 /*About me section*/
 #about-me-section {
-    width: 75%;
+    width: 100%;
     line-height: 1.7em;
 }
 #about-me-section a {

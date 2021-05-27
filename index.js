@@ -54,57 +54,53 @@ function displaySection(link,section) {
   let sec = document.querySelector(`#${section}`);
   
   lnk.onclick = (event) => {
-      const mq = window.matchMedia("(max-width: 500px)");
-      if(mq.matches) {
-          let goBackButton = document.querySelector("#go-back-button");
-          goBackButton.style.display = "block";
-          goBackButton.addEventListener("click",() => {
-              sec.style.display = "none";       
-              let menu = document.querySelector("#menu");
-              menu.style.display = "flex";
-              goBackButton.style.display = "none";
-              lnk.classList.remove("active");
-       
-          });
-          lnk.parentElement.style.display = "none"; 
-          if (section == "projects-section") {
-              let s = document.querySelector("#projects-wrapper");
-              s.style.display = "flex";
-              s.style.flexDirection = "column";
-
-          }
-          else if (section == "contact-me-section") {
-              let linkWrapper = document.querySelector(`#${section} div`);
-              linkWrapper.style.display = "flex";
-              linkWrapper.style.flexDirection = "column";
-          }
-          sec.classList.remove("section");
-          sec.style.display = "block";
-          sec.style.animationName = "section-mobile";
-          sec.style.animationDuration = "1.2s";
-      } 
-      else {
-          for(elem of sec.parentElement.children){
-              elem.style.display = "none";
-          }
-          sec.classList.remove("section");
-          sec.style.display = "block";
-          sec.style.animationName = "section";
-          sec.style.animationDuration = "0.6s";
-          sec.style.animationFillMode = "forwards";
-
-          event.preventDefault() ;
-          lnk.classList.add("active");
-      }
+    const mq = window.matchMedia("(max-width: 500px)");
+    if(mq.matches) {
+        let goBackButton = document.querySelector("#go-back-button");
+        goBackButton.style.display = "block";
+        goBackButton.addEventListener("click",() => {
+          sec.style.display = "none";       
+          let menu = document.querySelector("#menu");
+          menu.style.display = "flex";
+          goBackButton.style.display = "none";
+          lnk.classList.remove("active");
+        });
+        lnk.parentElement.style.display = "none"; 
+        if (section == "projects-section") {
+          let s = document.querySelector("#projects-wrapper");
+          s.style.display = "flex";
+          s.style.flexDirection = "column";
+        }
+        else if (section == "contact-me-section") {
+          let linkWrapper = document.querySelector(`#${section} div`);
+          linkWrapper.style.display = "flex";
+          linkWrapper.style.flexDirection = "column";
+        }
+        sec.classList.remove("section");
+        sec.style.display = "block";
+        sec.style.animationName = "section-mobile";
+        sec.style.animationDuration = "1.2s";
+    } 
+    else {
+        for(elem of sec.parentElement.children){
+          elem.style.display = "none";
+        }
+        sec.classList.remove("section");
+        sec.style.display = "block";
+        sec.style.animationName = "section";
+        sec.style.animationDuration = "0.6s";
+        sec.style.animationFillMode = "forwards";
+        event.preventDefault() ;
+        lnk.classList.add("active");
+    }
       
-      let jiran = lnk.parentElement.children;
-      for(j of jiran){
-          j.classList.remove("active");
-      }
+    let jiran = lnk.parentElement.children;
+    for(j of jiran){
+        j.classList.remove("active");
+    }
 
-          event.preventDefault() ; 
-          lnk.classList.add("active");
-
+    event.preventDefault(); 
+    lnk.classList.add("active");
   };
 }
 
