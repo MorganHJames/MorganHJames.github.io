@@ -339,6 +339,15 @@ svg {
     padding: 0.5em;
 }
 
+/*PDF Wrapper*/
+pdfWrapper {
+	position: relative;
+	padding-bottom: 0%; /* 16:9 */
+	padding-top: 0px;
+	height: 600px;
+	width: 100%;
+}
+
 /*Footer*/
 footer {
     position: absolute;
@@ -442,8 +451,7 @@ footer {
 
 /*Resume*/
 #resume-section {
-    width: 75%;
-    line-height: 1.7em;
+    width: 100%;
 }
 
 /*Contact me section*/
