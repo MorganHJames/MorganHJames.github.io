@@ -101,6 +101,8 @@ function displaySection(link,section) {
 
     event.preventDefault(); 
     lnk.classList.add("active");
+
+    stopAllYouTubeVideos();
   };
 }
 
@@ -109,9 +111,20 @@ function startSection(link,section) {
   elem.onclick.apply(elem);
 }
 
+function stopAllYouTubeVideos() {
+  var iframes = document.querySelectorAll('iframe');
+  Array.prototype.forEach.call(iframes, iframe => {
+    iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'stopVideo' }), '*');
+  });
+}
+
 swapBrightness();
+stopAllYouTubeVideos();
 displaySection("about-me","about-me-section");
 displaySection("projects","projects-section");
 displaySection("resume","resume-section");
 displaySection("contact-me","contact-me-section");
+displaySection("esd-project1","esd-project-section");
+displaySection("esd-project2","esd-project-section");
+displaySection("esd-project3","esd-project-section");
 startSection("projects","projects-section");
