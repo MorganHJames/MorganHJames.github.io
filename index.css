@@ -76,7 +76,7 @@ body{
     animation-duration: var(--intro-animation-length);
 }
 
-/*Name*/
+/*Section*/
 section {
     background-color: transparent;
 }
@@ -223,31 +223,107 @@ section h2 {
     width: 100%;
 }
 
-/*Menu*/
-#menu {
-    display: flex;
-    flex-direction: row;
-    max-width: 50%;
+/*MENU*/
+.menu		
+{		
     color: gray;
+	position:					relative;
+	width:						100%;
+	z-index:					2;
     animation: headerIntro;
     animation-duration: var(--intro-animation-length);
+    flex-basis: content;
 }
-#menu a {
-    font-family: var(--menu-font);
-    font-size: 1.5em;
-    font-weight: light;
-    margin-right: 2em;
-    padding: 5px;
+.menu div a{
+	margin-bottom:				0.0em;
+	margin-top:					0.0em;
+	margin-left:				0.333em;
+	margin-right:				0.333em;
+}
+.menu div a div		
+{		
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	display:					inline-block;
+	list-style:					none;
+	text-align:					center;
+	text-decoration:			none;
+	background-color:			transparent;
+	transition:					background-color 0.3s;
     border: 2px solid var(--current-accent-color);
     box-shadow: 5px 5px 0px 2px var(--current-accent-color);
-    white-space: nowrap;
 }
-#menu a:hover {
+.menu div a:hover div		
+{	
     border: 2px solid var(--current-text-color);
     color: var(--current-hover-text-color);
     background-color: var(--current-accent-color);
     box-shadow: 0px 0px 0px 0px;
     transition: all 0.4s;
+}
+.menu div a div h3
+{
+	margin-bottom:				0.1em;
+	margin-top:					0.1em;
+	margin-left:				0.333em;
+	margin-right:				0.333em;
+	transition:					color 0.3s;
+}
+@media (max-width:2000px){ 
+    h3{
+        font-size: 1.25em;
+    }
+}
+@media (max-width:966px){ 
+    h3{
+        font-size: 1.2em;
+    }
+}
+@media (max-width:929px){ 
+    h3{
+        font-size: 1.17em;
+    }
+    #slogan{
+        margin-top: 2em;
+    }
+}
+@media (max-width:775px){ 
+    h3{
+        font-size: 1.17em;
+    }
+    #slogan{
+        margin-top: 2em;
+    }
+}
+@media (max-width:610px){
+    .menu div a div	{
+        margin-bottom: 0.25em;
+        margin-top: 0.25em;  
+    }	 
+    h3{
+        font-size: 1em;
+    }
+    #name{
+        font-size: 1.5em;
+    }
+    #slogan{
+        margin-top: 2em;
+    }
+}
+@media (max-width:490px){
+    .menu div a div	{
+        margin-bottom: 0.25em;
+        margin-top: 0.25em;  
+    }	 
+    h3{
+        font-size: 0.9em;
+    }
+    #name{
+        font-size: 1.5em;
+    }
+    #slogan{
+        margin-top: 2.1em;
+    }
 }
 
 /*Visible*/
@@ -350,23 +426,12 @@ svg {
 .active > * {
     color: var(--current-background-color) !important;
     background-color: var(--current-text-color) !important;
-    padding: 0.5em;
     border: 2px solid var(--current-text-color) !important;
     box-shadow: 1px 1px 0px 2px var(--current-text-color) !important;
 }
 .active > *:hover {
-    box-sizing: border-box;
-    background-color: transparent;
-    padding: 0.5em;
-}
-
-/*PDF Wrapper*/
-pdfWrapper {
-	position: relative;
-	padding-bottom: 0%; /* 16:9 */
-	padding-top: 0px;
-	height: 600px;
-	width: 100%;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 /*Footer*/
@@ -476,6 +541,24 @@ footer {
     width: 50%;
     margin: 1em auto;
 }
+@media (max-width:530px){
+    #projects-wrapper img{
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width:500px){
+    #projects-wrapper img{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width:450px){
+    #projects-wrapper img{
+        width: 125px;
+        height: 125px;
+    }
+}
 
 /*Resume*/
 #resume-section {
@@ -500,7 +583,7 @@ footer {
     height: 1em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 50%;
+    width: 100%;
 }
 #contact-me-section > div > * {
     margin-top: 1em;
@@ -531,44 +614,64 @@ footer {
     padding: 0px;
 }
 .float-child-left {
-    width: 48%;
+    width: 47%;
     float: left;
-    padding: 10px 10px 10px 0px;
+    padding: 20px 10px 10px 0px;
 }
 .float-child-right {
-    width: 48%;
+    width: 47%;
     float: right;
-    padding: 10px 0px 10px 10px;
+    padding: 20px 0px 10px 10px;
 }    
 @media (max-width:1000px){
     .float-child-left {
         width: 100%;
         float: left;
-        padding: 10px 10px 10px 0px;
+        padding: 20px 10px 10px 0px;
     }  
     .float-child-right {
         width: 100%;
         float: right;
-        padding: 10px 0px 10px 10px;
+        padding: 20px 0px 10px 10px;
     }     
 }
 
 /*ESD Project*/
-#esd-project-section a {
-    display: inline-block;
-    padding: 0.5em;
-    font-size: 0.9em;
-    color: var(--current-hover-text-color);
-    background-color: var(--current-accent-color);
-    box-shadow: 0px 0px 3px 1px var(--current-accent-color);
-    margin: 1.5em 0em 0em 0em;
-    opacity: 0.7;
-    box-shadow: 5px 5px 0px 3px, 0px 0px 0px 3px;
+.linkGrid > div {
+    margin-left: 0em;
+    margin-bottom: 7em;
 }
-#esd-project-section a:hover {
+.linkGrid > div > * {
+    min-width: max-content;
+    opacity: 0.5;
+    margin-right: 2em;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.linkGrid > div > *:hover {
+    opacity: 1;
+}
+.linkGrid > div {
+    height: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+.linkGrid > div > * {
+    margin-top: 1em;
+    box-shadow: 5px 5px 0px 2px var(--current-accent-color);
+    padding: 0.5em;
+    border: 2px solid var(--current-accent-color);
+}
+.linkGrid > div > *:hover {
+    box-shadow: 0px 0px 0px 0px;
+    border: 2px solid var(--current-text-color);
+    color: var(--text-color);
+    background-color: var(--current-accent-color);
     transition: all 0.4s;
-    color: var(--current-background-color);
-    background-color: var(--current-text-color);
-    box-shadow: 0px 0px 0px 0px var(--current-accent-color),3px 3px 0px 0px var(--current-accent-color);
+}
+.linkGrid > div a i {
+    color: var(--text-color);
+    margin-right: 0.5em;
     opacity: 1;
 }

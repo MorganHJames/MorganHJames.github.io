@@ -33,13 +33,15 @@
       <!--Title-->
       <h1 id="name">Morgan James</h1>
 
-      <!--Title-->
-      <div id="menu">
-        <p id="about-me"> <a href="">About Me</a> </p>
-        <p id="projects" class="active"> <a href="">Projects</a> </p>
-        <p id="resume"> <a href="">Résumé</a> </p>
-        <p id="contact-me"> <a href="">Contact Me</a> </p>
-      </div> 
+      <!--MENU-->
+      <nav class="menu" id="top">
+        <div id="menList" class="list">
+            <a id="about-me" href=""><div><h3>About Me</h3></div></a>
+            <a id="projects" class="active" href=""><div><h3>Projects</h3></div></a>
+            <a id="resume" href=""><div><h3>Résumé</h3></div></a>
+            <a id="contact-me" href=""><div><h3>Contact Me</h3></div></a>
+        </div>
+      </nav>
 
       <!--Brightness Swap-->
       <div id="brightswap">
@@ -131,25 +133,23 @@
       </div>
       <div class="float-container">
         <div class="float-child-left">
-          <div class="pdfWrapper">
-            <iframe src="Resources/Projects/ESD/CT6007 Morgan James IRP-converted.pdf?#zoom=70" height="800px" width="100%"></iframe>
-          </div>
+        <iframe src="Resources/Projects/ESD/CT6007 Morgan James IRP-converted.pdf?#zoom=70" height="800px" width="100%"></iframe>
         </div>
         <div class="float-child-right">
           <p>Emotional Speed Dating is the result of a research project studying human emotion detection and machine learning. I created the study to the left which allowed me to understand how emotion detection works and thus enabled myself to create a game using Unity and C# that utilises emotion as an input. Within the game you see yourself participating in a speed dating event. The goal of the game is to find true love by empathising with your dates (mimicking their emotion). The game utilises a convolutional neural network as the main tool for emotion detection. You can read in full about the methods used in the study or have it summed up within the poster below.</p>
-          <div class="float-container">
-            <div class="float-child-left">
-              <a href="https://github.com/MorganHJames" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>
-                github</a>
-            </div>
-            <div class="float-child-right">
-              <a href="https://github.com/MorganHJames" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>
+          <div class="linkGrid">
+            <div>
+            <a href="https://github.com/MorganHJames/EmotionalSpeedDating" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
               github</a>
+            <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211979&authkey=AHMEtKqXuBQ58B8" description="Download" rel="noopener noreferrer"><i class="fas fa-download"> </i>
+              download</a>
             </div>
           </div>
           <!--Buttons-->
         </div>
       </div>
+      <iframe src="Resources/Projects/ESD/Poster.pdf?#zoom=75" height="905px" width="100%"></iframe>
+      
     </section>
   </main>
   <!--Javascript-->
