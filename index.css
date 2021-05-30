@@ -325,6 +325,21 @@ section h2 {
         margin-top: 2.1em;
     }
 }
+@media (max-width:490px){
+    .menu div a div	{
+        margin-bottom: 0.25em;
+        margin-top: 0.25em;  
+    }	 
+    h3{
+        font-size: 0.9em;
+    }
+    #name{
+        font-size: 1.5em;
+    }
+    #slogan{
+        margin-top: 2.1em;
+    }
+}
 
 /*Visible*/
 .visible {
@@ -513,7 +528,6 @@ footer {
 #projects-wrapper > div h3 em {
     font-size: 0.7em;
     font-weight: 400;
-    word-wrap: none;
     white-space: nowrap;
 }
 #projects-wrapper > div h3 a:hover {
@@ -551,12 +565,23 @@ footer {
     #projects-wrapper img{
         width: 150px;
         height: 150px;
+        padding: 0em;
     }
 }
-@media (max-width:450px){
+@media (max-width:420px){
     #projects-wrapper img{
         width: 125px;
         height: 125px;
+    }
+}
+@media (max-width:390px){
+    #projects-wrapper img{
+        width: 105px;
+        height: 105px;
+    }
+    
+    #projects-wrapper > div h3 em {
+        font-size: 0.5em;
     }
 }
 
@@ -602,6 +627,12 @@ footer {
     color: var(--text-color);
     margin-right: 0.5em;
     opacity: 1;
+}
+@media (max-width:520px){
+    #contact-me-section > div > * {
+        margin-right: 1em;
+        font-size: 1em;
+    }
 }
 
 /*Project*/
