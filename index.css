@@ -153,13 +153,13 @@ section h2 {
 .watermark:first-child{
     width: 100%;
     font-size: 10em;
-    bottom: 0.5em;
+    bottom: 0.25em;
     animation: scroll-right 30s linear infinite;
 }
 .watermark:nth-child(2){
     width: 100%;
     font-size: 20em;
-    top: 0.5em;
+    top: 0.25em;
     animation: scroll-left 60s linear infinite;
 }
 .watermark:nth-child(3){
