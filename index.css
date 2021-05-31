@@ -671,7 +671,8 @@ footer {
 .linkGrid > div > * {
     min-width: max-content;
     opacity: 0.5;
-    margin-right: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
     font-weight: 700;
     font-size: 1.5em;
 }
