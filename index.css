@@ -719,3 +719,42 @@ footer {
     width: 350px;
     box-shadow: 5px 5px 0px 2px var(--current-accent-color);
 }
+
+.link > div {
+    margin-left: 0em;
+    margin-bottom: 7em;
+}
+.link > div > * {
+    min-width: max-content;
+    opacity: 0.5;
+    margin-right: 2em;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.link > div > *:hover {
+    opacity: 1;
+}
+.link > div {
+    height: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+.link > div > * {
+    margin-top: 1em;
+    box-shadow: 5px 5px 0px 2px var(--current-accent-color);
+    padding: 0.5em;
+    border: 2px solid var(--current-accent-color);
+}
+.link > div > *:hover {
+    box-shadow: 0px 0px 0px 0px;
+    border: 2px solid var(--current-text-color);
+    color: var(--text-color);
+    background-color: var(--current-accent-color);
+    transition: all 0.4s;
+}
+.link > div a i {
+    color: var(--text-color);
+    margin-right: 0.5em;
+    opacity: 1;
+}
