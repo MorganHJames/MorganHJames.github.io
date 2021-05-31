@@ -12,7 +12,13 @@ let lightAccent = getComputedStyle(document.documentElement).getPropertyValue("-
 
 function swapBrightness() {
   let icon = document.querySelector('#brightswap img');
-
+  
+  icon.onmouseover = () => {
+    icon.setAttribute("src","Resources/sun-full.svg");
+  }
+  icon.onmouseout = () => {
+    icon.setAttribute("src","Resources/sun-empty.svg");
+  }
   icon.onclick = () => {
     let color = getComputedStyle(document.documentElement).getPropertyValue("--current-background-color");
     if(color == lightBackground){
