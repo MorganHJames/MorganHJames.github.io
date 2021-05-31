@@ -99,4 +99,7 @@ displaySection("contact-me","contact-me-section");
 displaySection("esd-project1","esd-project-section");
 displaySection("esd-project2","esd-project-section");
 displaySection("esd-project3","esd-project-section");
+displaySection("cc-project1","cc-project-section");
+displaySection("cc-project2","cc-project-section");
+displaySection("cc-project3","cc-project-section");
 startSection("projects","projects-section");
