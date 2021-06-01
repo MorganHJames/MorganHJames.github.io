@@ -643,6 +643,8 @@ footer {
 /*Float Container*/
 .float-container {
     padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .float-child-left {
     width: 47%;
@@ -663,7 +665,7 @@ footer {
     }     
 }
 
-/*ESD Project*/
+/*Link Grid*/
 .linkGrid > div {
     margin-left: 0em;
     margin-bottom: 7em;
@@ -721,6 +723,12 @@ footer {
     box-shadow: 5px 5px 0px 2px var(--current-accent-color);
 }
 
+/*PDF Wrapper*/
+.pdf-wrapper{
+    width: 100%;
+}
+
+/*Link*/
 .link > div {
     margin-left: 0em;
     margin-bottom: 7em;

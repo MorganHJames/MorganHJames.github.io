@@ -109,7 +109,7 @@
             <div class="tags">
               <span>C#</span>
               <span>Unity</span>
-              <span>Solo Made</span>
+              <span>Procedural</span>
               <span>Indie Game</span>
             </div>
             <br>
@@ -179,12 +179,32 @@
             <img src="Resources/Projects/KR/square.jpg" alt="">
           </a>
         </div>
+        <div>
+          <div>
+            <h3> 
+              <a href="" id="atwu-project1">All the way USA!</a>
+              <br>
+              <em> - An fun AR infographic</em>   
+            </h3>
+            <div class="tags">
+              <span>C#</span>
+              <span>Unity</span>
+              <span>AR</span>
+              <span>XR</span>
+            </div>
+            <br>
+            <a href="" id="atwu-project2">Read more...</a>
+          </div>
+          <a href="" id="atwu-project3">
+            <img src="Resources/Projects/ATWU/square.jpg" alt="">
+          </a>
+        </div>
       </div>
     </section>
 
     <!--Resume-->
     <section id="resume-section" class="section">
-      <div class="pdfWrapper">
+      <div class="pdf-wrapper">
 	      <iframe src="Resources/Resume/CV-Morgan-James.pdf?#zoom=110" height="1325px" width="100%"></iframe>
       </div>
     </section>
@@ -212,7 +232,9 @@
       </div>
       <div class="float-container">
         <div class="float-child-left">
-        <iframe src="Resources/Projects/ESD/CT6007 Morgan James IRP-converted.pdf?#zoom=70" height="800px" width="100%"></iframe>
+          <div class="pdf-wrapper">
+            <iframe src="Resources/Projects/ESD/CT6007 Morgan James IRP-converted.pdf?#zoom=70" height="800px" width="100%"></iframe>
+          </div>
         </div>
         <div class="float-child-right">
           <p>Emotional Speed Dating is the result of a research project studying human emotion detection and machine learning. I created the study to the left which allowed me to understand how emotion detection works and thus enabled myself to create a game using Unity and C# that utilises emotion as an input. Within the game you see yourself participating in a speed dating event. The goal of the game is to find true love by empathising with your dates (mimicking their emotion). The game utilises a convolutional neural network as the main tool for emotion detection. You can read in full about the methods used in the study or have it summed up within the poster below.</p>
@@ -226,7 +248,9 @@
           </div>
         </div>
       </div>
-      <iframe src="Resources/Projects/ESD/Poster.pdf?#zoom=75" height="905px" width="100%"></iframe>
+      <div class="pdf-wrapper">
+        <iframe src="Resources/Projects/ESD/Poster.pdf?#zoom=75" height="905px" width="100%"></iframe>
+      </div>
     </section>
 
     <!--CC Project-->
@@ -273,6 +297,58 @@
       </div>
     </section>
     
+    <!--ATWU Project-->
+    <section id="atwu-project-section" class="section" class="project">
+			<h2>All the way USA!</h2>
+      <img src="Resources/Projects/ATWU/banner.jpg" width="100%" alt="">
+      <div class="float-container">
+        <div class="float-child-left">
+          <div class="pdf-wrapper">
+            <iframe src="Resources/Projects/ATWU/DesignDocument.pdf?#zoom=70" height="800px" width="100%"></iframe>
+          </div>
+        </div>
+        <div class="float-child-right">
+          <p>All the way USA! Is an Augmented reality mobile application that I created out of the desire to learn more about the individual states of the USA. The app is made possible through the 3rd party package Vuforia which handles most of the Augmented reality aspects of the app. A 3D map of the USA is displayed upon a dollar bill when the camera has one in sight. The map can be scaled through a pinching gesture. The map has toggleable features including state names, state abbreviations and capital cities. When the user presses a state it becomes centered and the other states disappear to reveal more information about the state including the flag of the state, the seal of the state and an article about the history and statistics about the state. There are also three tests that you can use to see how well you know the name, flag and capital of each state. During a test all of the information is hidden apart from either the name, flag or capital of a state and you have to select the corresponding landmass on your first try to get a point. The high score of the user is saved in the application and displayed over the testing buttons. Since the app was made with the free version of Vurifora I can not distribute it on the play store or app store without getting a subscription so the download link is for the android APK.</p>
+          <div class="linkGrid">
+            <div>
+            <a href="https://github.com/MorganHJames/All-the-way-USA-" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
+              github</a>
+            <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211982&authkey=ABvMkdSjI1ksOTY" description="Download" rel="noopener noreferrer"><i class="fas fa-download"></i>
+              download</a>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div>
+        <div class="img-container">
+          <div>
+            <h3>Test Your Knowledge</h3>
+            <img src="Resources/Projects/ATWU/test.jpg" alt="">
+          </div>
+          <div>
+            <h3>Info On Each State</h3>
+            <img src="Resources/Projects/ATWU/info.jpg" alt="">
+          </div>
+          <div>
+            <h3>Scaled Small</h3>
+            <img src="Resources/Projects/ATWU/small.jpg" alt="">
+          </div>
+          <div>
+            <h3>Scaled Large</h3>
+            <img src="Resources/Projects/ATWU/large.jpg" alt="">
+          </div>
+          <div>
+            <h3>Start Screen</h3>
+            <img src="Resources/Projects/ATWU/start.jpg" alt="">
+          </div>
+          <div>
+            <h3>3D Model</h3>
+            <img src="Resources/Projects/ATWU/full map.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!--UST Project-->
     <section id="ust-project-section" class="section" class="project">
 			<h2>Unity Shader Tutorial</h2>
@@ -286,7 +362,9 @@
             download</a>
         </div>
       </div>
-      <iframe src="Resources/Projects/UST/Unity Shader Tutorial.pdf?#zoom=110" height="1250px" width="100%"></iframe>
+      <div class="pdf-wrapper">
+        <iframe src="Resources/Projects/UST/Unity Shader Tutorial.pdf?#zoom=110" height="1250px" width="100%"></iframe>
+      </div>
     </section>
     
     <!--KR Project-->
