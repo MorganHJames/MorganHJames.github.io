@@ -114,4 +114,7 @@ displaySection("ust-project3","ust-project-section");
 displaySection("ls-project1","ls-project-section");
 displaySection("ls-project2","ls-project-section");
 displaySection("ls-project3","ls-project-section");
+displaySection("kr-project1","kr-project-section");
+displaySection("kr-project2","kr-project-section");
+displaySection("kr-project3","kr-project-section");
 startSection("projects","projects-section");
