@@ -656,14 +656,6 @@ footer {
     float: right;
     padding: 20px 0px 10px 10px;
 }    
-@media (max-width:1000px){
-    .float-child-left {
-        width: 100%;
-    }  
-    .float-child-right {
-        width: 100%;
-    }     
-}
 
 /*Link Grid*/
 .linkGrid > div {
@@ -704,6 +696,17 @@ footer {
     color: var(--text-color);
     margin-right: 0.5em;
     opacity: 1;
+}
+@media (max-width:1000px){
+    .float-child-left {
+        width: 100%;
+    }  
+    .float-child-right {
+        width: 100%;
+    }     
+    .linkGrid > div > * {
+        margin-left: 0em;
+    }
 }
 
 /*Float Container triple*/
@@ -767,4 +770,11 @@ footer {
     color: var(--text-color);
     margin-right: 0.5em;
     opacity: 1;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

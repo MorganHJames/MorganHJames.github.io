@@ -81,6 +81,7 @@ function displaySection(link,section) {
     event.preventDefault(); 
     lnk.classList.add("active");
     stopAllYouTubeVideos();
+    window.scrollTo(0, 0);
   };
 }
 
@@ -120,4 +121,7 @@ displaySection("kr-project3","kr-project-section");
 displaySection("atwu-project1","atwu-project-section");
 displaySection("atwu-project2","atwu-project-section");
 displaySection("atwu-project3","atwu-project-section");
+displaySection("dtt-project1","dtt-project-section");
+displaySection("dtt-project2","dtt-project-section");
+displaySection("dtt-project3","dtt-project-section");
 startSection("projects","projects-section");
