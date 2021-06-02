@@ -124,4 +124,7 @@ displaySection("atwu-project3","atwu-project-section");
 displaySection("dtt-project1","dtt-project-section");
 displaySection("dtt-project2","dtt-project-section");
 displaySection("dtt-project3","dtt-project-section");
+displaySection("mii-project1","mii-project-section");
+displaySection("mii-project2","mii-project-section");
+displaySection("mii-project3","mii-project-section");
 startSection("projects","projects-section");
