@@ -130,4 +130,7 @@ displaySection("mii-project3","mii-project-section");
 displaySection("ysob-project1","ysob-project-section");
 displaySection("ysob-project2","ysob-project-section");
 displaySection("ysob-project3","ysob-project-section");
+displaySection("ou-project1","ou-project-section");
+displaySection("ou-project2","ou-project-section");
+displaySection("ou-project3","ou-project-section");
 startSection("projects","projects-section");

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Artboard Copy 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="18.502417%" cy="11.7767334%" fx="18.502417%" fy="11.7767334%" r="100.430318%" id="radialGradient-1">
+            <stop stop-color="#850DD4" offset="0%"></stop>
+            <stop stop-color="#500BD8" offset="100%"></stop>
+        </radialGradient>
+        <polygon id="path-2" points="0.5049 0.59 41.4199 0.59 41.4199 50.9997 0.5049 50.9997"></polygon>
+        <radialGradient cx="38.3538706%" cy="90.5276293%" fx="38.3538706%" fy="90.5276293%" r="92.0685181%" gradientTransform="translate(0.383539,0.905276),scale(1.000000,0.811645),rotate(-90.000000),scale(1.000000,2.555528),translate(-0.383539,-0.905276)" id="radialGradient-4">
+            <stop stop-color="#850DD4" offset="0%"></stop>
+            <stop stop-color="#067EF0" offset="100%"></stop>
+        </radialGradient>
+        <polygon id="path-5" points="0.0004 0.59 57.1004 0.59 57.1004 50.9998 0.0004 50.9998"></polygon>
+        <linearGradient x1="19.2176366%" y1="72.2964819%" x2="16.6658521%" y2="36.5316088%" id="linearGradient-7">
+            <stop stop-color="#83EEE5" offset="0%"></stop>
+            <stop stop-color="#067EF0" offset="100%"></stop>
+        </linearGradient>
+        <path d="M53.1204,46.9998 L53.1204,43.7098 C53.1204,43.5498 53.1100667,43.3131333 53.0894,42.9998 L45.1204,43.7098 L45.1204,46.9998 C45.1204,49.2098 46.9104,50.9998 49.1204,50.9998 L57.1004,50.9998 C54.9604,50.9998 53.2194,49.3198 53.1104,47.2098 C53.1204,47.1398 53.1204,47.0698 53.1204,46.9998 Z" id="path-8"></path>
+        <filter x="-41.7%" y="-87.5%" width="216.9%" height="275.0%" filterUnits="objectBoundingBox" id="filter-9">
+            <feOffset dx="2" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.439466783 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="19.2176366%" y1="88.9700697%" x2="16.6658521%" y2="26.4597775%" id="linearGradient-10">
+            <stop stop-color="#83EEE5" offset="0%"></stop>
+            <stop stop-color="#067EF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Artboard-Copy-11" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M64,8 C33.121,8 8,33.122 8,64 C8,94.878 33.121,120 64,120 C94.879,120 120,94.878 120,64 C120,33.122 94.879,8 64,8 M64,128 C28.71,128 0,99.29 0,64 C0,28.71 28.71,0 64,0 C99.29,0 128,28.71 128,64 C128,99.29 99.29,128 64,128" id="Fill-1" fill="url(#radialGradient-1)"></path>
+        <g id="Group-7" transform="translate(23.000000, 38.000000)">
+            <g id="Group-3" transform="translate(41.000000, 0.410000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M25.4199,0.5897 L4.5049,0.5897 C2.2949,0.5897 0.5049,2.3807 0.5049,4.5897 C0.5049,6.7987 2.2949,8.5897 4.5049,8.5897 L25.4199,8.5897 C29.8299,8.5897 33.4199,12.1797 33.4199,16.5897 L33.4199,34.9997 C33.4199,39.4097 29.8299,42.9997 25.4199,42.9997 L8.1199,42.9997 C5.9099,42.9997 4.1199,44.7897 4.1199,46.9997 C4.1199,49.2097 5.9099,50.9997 8.1199,50.9997 C10.2599,50.9997 11.9999,49.3197 12.1099,47.2097 C12.2199,49.3197 13.9599,50.9997 16.1009,50.9997 L25.4199,50.9997 C34.2399,50.9997 41.4199,43.8197 41.4199,34.9997 L41.4199,16.5897 C41.4199,7.7697 34.2399,0.5897 25.4199,0.5897" id="Fill-1" fill="url(#radialGradient-4)" mask="url(#mask-3)"></path>
+            </g>
+            <g id="Group-6" transform="translate(0.000000, 0.410000)">
+                <mask id="mask-6" fill="white">
+                    <use xlink:href="#path-5"></use>
+                </mask>
+                <g id="Clip-5"></g>
+                <g id="Fill-4" mask="url(#mask-6)">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+                    <use fill="url(#linearGradient-7)" fill-rule="evenodd" xlink:href="#path-8"></use>
+                </g>
+                <path d="M53.1104,47.2098 C53.1204,47.1398 53.1204,47.0698 53.1204,46.9998 L53.1204,43.7098 C53.1204,43.4698 53.1104,43.2298 53.0894,42.9998 C52.7294,36.7598 47.5404,31.7998 41.2104,31.7998 C34.8804,31.7998 29.6904,36.7598 29.3304,42.9998 L16.0004,42.9998 C11.5894,42.9998 8.0004,39.4098 8.0004,34.9998 L8.0004,16.5898 C8.0004,12.1798 11.5894,8.5898 16.0004,8.5898 L45.5054,8.5898 C47.7144,8.5898 49.5054,6.7988 49.5054,4.5898 C49.5054,2.3808 47.7144,0.5898 45.5054,0.5898 L16.0004,0.5898 C7.1804,0.5898 0.0004,7.7698 0.0004,16.5898 L0.0004,34.9998 C0.0004,43.8198 7.1804,50.9998 16.0004,50.9998 L33.2994,50.9998 C35.5094,50.9998 37.2994,49.2098 37.2994,46.9998 L37.2994,43.7098 C37.2994,41.5498 39.0494,39.7998 41.2104,39.7998 C43.3704,39.7998 45.1204,41.5498 45.1204,43.7098 L45.1204,46.9998 C45.1204,49.2098 46.9104,50.9998 49.1204,50.9998 L57.1004,50.9998 C54.9604,50.9998 53.2194,49.3198 53.1104,47.2098" id="Fill-4" fill="url(#linearGradient-10)" mask="url(#mask-6)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
