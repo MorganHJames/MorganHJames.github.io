@@ -127,4 +127,7 @@ displaySection("dtt-project3","dtt-project-section");
 displaySection("mii-project1","mii-project-section");
 displaySection("mii-project2","mii-project-section");
 displaySection("mii-project3","mii-project-section");
+displaySection("ysob-project1","ysob-project-section");
+displaySection("ysob-project2","ysob-project-section");
+displaySection("ysob-project3","ysob-project-section");
 startSection("projects","projects-section");
