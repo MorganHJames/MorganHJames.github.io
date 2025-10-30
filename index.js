@@ -93,7 +93,36 @@ function displaySection(link,section) {
 
 function startSection(link,section) {
   var elem = document.getElementById(link);
-  elem.onclick.apply(elem);
+  if (!elem) return;
+  // Prefer programmatic click to trigger any handlers added via addEventListener.
+  // Fallback to updating the hash directly if click() is not available.
+  try {
+    if (typeof elem.click === 'function') {
+      elem.click();
+    } else {
+      // Derive route from section as a fallback
+      let route = section
+        .replace("-project-section", "")
+        .replace("-me-section", "")
+        .replace("-section", "")
+        .replace("about", "about")
+        .replace("contact", "contact")
+        .replace("resume", "resume");
+      if (location.hash.replace(/^#\/?/, "") !== route) location.hash = route;
+      else navigateTo(route);
+    }
+  } catch (e) {
+    // Last-resort fallback: navigate directly
+    let route = section
+      .replace("-project-section", "")
+      .replace("-me-section", "")
+      .replace("-section", "")
+      .replace("about", "about")
+      .replace("contact", "contact")
+      .replace("resume", "resume");
+    if (location.hash.replace(/^#\/?/, "") !== route) location.hash = route;
+    else navigateTo(route);
+  }
 }
 
 function stopAllYouTubeVideos() {
