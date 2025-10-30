@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF Viewer</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#fff;color:#222}
+    .toolbar{height:44px;padding:6px 8px;box-sizing:border-box;display:flex;align-items:center;gap:8px;border-bottom:1px solid #e6e6e6;background:#fafafa}
+    .toolbar button{padding:6px 10px;border:1px solid #ddd;background:#f6f6f6;border-radius:4px;cursor:pointer}
+    .toolbar input[type=number]{width:64px}
+    #viewerContainer{height:calc(100% - 44px);overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:12px}
+    .pageCanvas{box-shadow:0 2px 8px rgba(0,0,0,0.08);background:#fff;margin-bottom:12px}
+    .small-note{color:#666;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button id="prev">◀ Prev</button>
+    <button id="next">Next ▶</button>
+    <span>Page</span>
+    <input id="page-num" type="number" min="1" value="1">
+    <span id="page-count">/ 0</span>
+    <div style="flex:1"></div>
+    <button id="zoom-out">-</button>
+    <span id="zoom-label">100%</span>
+    <button id="zoom-in">+</button>
+    <a id="open-new" href="#" target="_blank" rel="noopener noreferrer" style="margin-left:8px">Open in new tab</a>
+  </div>
+  <div id="viewerContainer"><div id="content"></div></div>
+
+  <script>
+    // Viewer: prefer local PDF.js if available at Resources/vendor/pdfjs/, otherwise use CDN.
+    (function(){
+  const LOCAL_BASE = '../vendor/pdfjs'; // relative from Resources/pdf-viewer/
+      const CDN = {
+        core: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js',
+        worker: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js'
+      };
+
+      // Load a script dynamically and return a Promise that resolves when loaded or rejects.
+      function loadScript(src, timeout=8000){
+        return new Promise((resolve,reject)=>{
+          const s = document.createElement('script'); s.src = src; s.async = true;
+          s.onload = () => resolve();
+          s.onerror = () => reject(new Error('Script failed: '+src));
+          document.head.appendChild(s);
+          // timeout
+          setTimeout(()=>reject(new Error('Timeout loading '+src)), timeout);
+        });
+      }
+
+      async function ensurePDFjs(){
+        // Prefer local copy
+        try {
+          await loadScript(LOCAL_BASE + '/pdf.min.js', 3000);
+          // worker setting deferred below
+          return { loadedFrom: 'local' };
+        } catch (_) {
+          // fallback to CDN
+          try { await loadScript(CDN.core, 8000); return { loadedFrom: 'cdn' }; } catch (e) { throw e; }
+        }
+      }
+
+      const params = new URLSearchParams(location.search);
+      const file = params.get('file');
+      if (!file) {
+        document.getElementById('content').innerHTML = '<div class="small-note">No file specified.</div>';
+        return;
+      }
+
+      const content = document.getElementById('content');
+      const openNew = document.getElementById('open-new');
+      const fileUrl = new URL(file, location.href).href;
+      openNew.href = fileUrl;
+
+      const prevBtn = document.getElementById('prev');
+      const nextBtn = document.getElementById('next');
+      const pageNumInput = document.getElementById('page-num');
+      const pageCount = document.getElementById('page-count');
+      const zoomIn = document.getElementById('zoom-in');
+      const zoomOut = document.getElementById('zoom-out');
+      const zoomLabel = document.getElementById('zoom-label');
+
+      let pdfDoc = null;
+      let currentPage = 1;
+      let scale = 1.0;
+      let rendered = new Map(); // pageNum -> true when rendered
+
+      // IntersectionObserver to lazy-render pages when they come into view
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            const p = parseInt(target.getAttribute('data-page'),10);
+            if (!rendered.get(p)) renderPage(p);
+          }
+        });
+      }, { root: document.getElementById('viewerContainer'), rootMargin: '200px' });
+
+      function createPagePlaceholder(p){
+        const wrapper = document.createElement('div');
+        wrapper.className = 'page-placeholder';
+        wrapper.setAttribute('data-page', p);
+        wrapper.style.width = '100%';
+        wrapper.style.display = 'flex';
+        wrapper.style.justifyContent = 'center';
+        wrapper.style.minHeight = '200px';
+        wrapper.innerHTML = '<div class="small-note">Page '+p+' (loading...)</div>';
+        io.observe(wrapper);
+        return wrapper;
+      }
+
+      function renderPage(pageNum){
+        if (!pdfDoc) return;
+        if (rendered.get(pageNum)) return;
+        rendered.set(pageNum, true);
+        const wrapper = content.querySelector('[data-page="'+pageNum+'"]');
+        if (!wrapper) return;
+        // replace placeholder with canvas
+        pdfDoc.getPage(pageNum).then(page => {
+          const viewport = page.getViewport({ scale });
+          const canvas = document.createElement('canvas');
+          canvas.className = 'pageCanvas';
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          const ctx = canvas.getContext('2d');
+          wrapper.innerHTML = '';
+          wrapper.appendChild(canvas);
+          page.render({ canvasContext: ctx, viewport }).promise.catch(err => {
+            wrapper.innerHTML = '<div class="small-note">Failed to render page.</div>';
+            console.error(err);
+          });
+        }).catch(err => {
+          wrapper.innerHTML = '<div class="small-note">Failed to load page.</div>';
+          console.error(err);
+        });
+      }
+
+      async function init(){
+        try {
+          const who = await ensurePDFjs();
+          // configure worker src based on where pdf.js was loaded from
+          if (who && who.loadedFrom === 'local') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = LOCAL_BASE + '/pdf.worker.min.js';
+          } else {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = CDN.worker;
+          }
+
+          // load the document
+          const loadingTask = pdfjsLib.getDocument(fileUrl);
+          pdfDoc = await loadingTask.promise;
+          pageCount.textContent = '/ ' + pdfDoc.numPages;
+
+          // create placeholders for pages and let IntersectionObserver render them lazily
+          content.innerHTML = '';
+          for (let p = 1; p <= pdfDoc.numPages; p++){
+            const ph = createPagePlaceholder(p);
+            content.appendChild(ph);
+          }
+
+          // render the first page immediately for perceived performance
+          renderPage(1);
+
+          // keyboard navigation
+          document.addEventListener('keydown', (e)=>{
+            if (e.code === 'ArrowRight' || e.code === 'PageDown') { e.preventDefault(); gotoPage(currentPage+1); }
+            if (e.code === 'ArrowLeft' || e.code === 'PageUp') { e.preventDefault(); gotoPage(currentPage-1); }
+          });
+
+        } catch (err) {
+          content.innerHTML = '<div class="small-note">Unable to load PDF viewer.</div>';
+          console.error(err);
+        }
+      }
+
+      function gotoPage(n){
+        if (!pdfDoc) return;
+        n = Math.max(1, Math.min(pdfDoc.numPages, n));
+        currentPage = n;
+        pageNumInput.value = currentPage;
+        // ensure page is rendered then scroll into view
+        renderPage(currentPage);
+        const node = content.querySelector('[data-page="'+currentPage+'"]');
+        if (node) node.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+
+      prevBtn.addEventListener('click', ()=> gotoPage(currentPage-1));
+      nextBtn.addEventListener('click', ()=> gotoPage(currentPage+1));
+      pageNumInput.addEventListener('change', ()=> gotoPage(parseInt(pageNumInput.value,10)||1));
+      zoomIn.addEventListener('click', ()=> { scale = Math.min(3, scale + 0.25); zoomLabel.textContent = Math.round(scale*100) + '%'; reRenderAll(); });
+      zoomOut.addEventListener('click', ()=> { scale = Math.max(0.5, scale - 0.25); zoomLabel.textContent = Math.round(scale*100) + '%'; reRenderAll(); });
+
+      function reRenderAll(){
+        // clear rendered map and replace placeholders
+        rendered = new Map();
+        const nodes = content.querySelectorAll('[data-page]');
+        nodes.forEach(n => { n.innerHTML = '<div class="small-note">Page '+n.getAttribute('data-page')+' (loading...)</div>'; io.observe(n); });
+        // render first and current
+        renderPage(currentPage);
+      }
+
+      // initial zoom label
+      zoomLabel.textContent = Math.round(scale*100) + '%';
+
+      init();
+    })();
+  </script>
+</body>
+</html>
