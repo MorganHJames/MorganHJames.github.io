@@ -58,26 +58,37 @@ function swapBrightness() {
 function displaySection(link,section) {
   let lnk = document.querySelector(`#${link}`);
   let sec = document.querySelector(`#${section}`);
-  
-  lnk.onclick = (event) => {
-    // Derive a route name from the target section id (e.g., "esd" from "esd-project-section")
-    let route = section
-      .replace("-project-section", "")
-      .replace("-me-section", "")
-      .replace("-section", "")
-      .replace("about", "about")
-      .replace("contact", "contact")
-      .replace("resume", "resume");
+  if (!lnk) return;
 
-    // Update the hash to drive navigation/back-forward behavior
-    event.preventDefault();
-    if (location.hash.replace(/^#\/?/, "") !== route) {
-      location.hash = route;
-    } else {
-      // If already on the same hash, still show to ensure consistent behavior
-      navigateTo(route);
+  // Derive a route name from the target section id (e.g., "esd" from "esd-project-section")
+  let route = section
+    .replace("-project-section", "")
+    .replace("-me-section", "")
+    .replace("-section", "")
+    .replace("about", "about")
+    .replace("contact", "contact")
+    .replace("resume", "resume");
+
+  // Ensure the anchor has a meaningful href so middle-click / ctrl/cmd+click works
+  try {
+    lnk.setAttribute('href', `#/${route}`);
+  } catch (_) {}
+
+  // Intercept plain left-clicks (no modifier keys) so SPA navigation is used.
+  // Let middle-click (button === 1) and modifier clicks (ctrl/meta/shift) fall through
+  // so the browser can open a new tab/window as expected.
+  lnk.addEventListener('click', (event) => {
+    // Only handle primary button without modifiers
+    if (event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+      event.preventDefault();
+      if (location.hash.replace(/^#\/?/, "") !== route) {
+        location.hash = route;
+      } else {
+        navigateTo(route);
+      }
     }
-  };
+    // Otherwise, do nothing and allow default browser behavior (open in new tab/window)
+  });
 }
 
 function startSection(link,section) {
