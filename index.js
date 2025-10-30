@@ -228,6 +228,46 @@ function normalizeYouTubeEmbeds() {
   });
 }
 
+// Safari fallback for embedded PDFs
+// Many Safari instances (especially iOS) show only the first page when using iframes.
+// This function replaces PDF iframes with a simple progressive link for Safari so the
+// user opens the PDF in the browser's native viewer (which reliably shows all pages).
+function adjustPDFEmbedsForSafari() {
+  try {
+    const pdfIframes = document.querySelectorAll('iframe[src*=".pdf"]');
+    if (!pdfIframes || pdfIframes.length === 0) return;
+
+    // Only change behavior for Safari (desktop or iOS)
+    if (!isSafari()) return;
+
+    pdfIframes.forEach((iframe) => {
+      const src = iframe.getAttribute('src');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'pdf-link-group';
+
+      const openLink = document.createElement('a');
+      openLink.href = src;
+      openLink.target = '_blank';
+      openLink.rel = 'noopener noreferrer';
+      openLink.textContent = 'Open PDF (view all pages)';
+
+      const note = document.createElement('span');
+      note.style.marginLeft = '0.5rem';
+      note.style.color = '#666';
+      note.textContent = '(Safari: open in new tab to view all pages)';
+
+      wrapper.appendChild(openLink);
+      wrapper.appendChild(note);
+
+      iframe.replaceWith(wrapper);
+    });
+  } catch (e) {
+    // noop — fail safely
+  }
+}
+
+
+
 // Simple diagnostics capture for local debugging: returns origin, iframe srcs and any performance resource entries that mention youtube
 function captureYouTubeDebug() {
   const origin = location.origin;
@@ -415,6 +455,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (_) {}
   try {
     setupYouTubeFallbacks();
+  } catch (_) {}
+  try {
+    adjustPDFEmbedsForSafari();
   } catch (_) {}
   // Expose the debug capture helper for manual use in DevTools
   try { window.captureYouTubeDebug = captureYouTubeDebug; } catch (_) {}
