@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>PDF Viewer</title>
   <style>
-    html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#fff;color:#222}
+    html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#fff;color:#222;overflow:hidden}
     .toolbar{height:44px;padding:6px 8px;box-sizing:border-box;display:flex;align-items:center;gap:8px;border-bottom:1px solid #e6e6e6;background:#fafafa}
     .toolbar button{padding:6px 10px;border:1px solid #ddd;background:#f6f6f6;border-radius:4px;cursor:pointer}
     .toolbar input[type=number]{width:64px}
@@ -25,6 +25,7 @@
     <button id="zoom-out">-</button>
     <span id="zoom-label">100%</span>
     <button id="zoom-in">+</button>
+    <button id="download" style="margin-left:8px">⬇ Download</button>
     <a id="open-new" href="#" target="_blank" rel="noopener noreferrer" style="margin-left:8px">Open in new tab</a>
   </div>
   <div id="viewerContainer"><div id="content"></div></div>
@@ -69,10 +70,29 @@
         return;
       }
 
-      const content = document.getElementById('content');
+  const content = document.getElementById('content');
+  const viewerContainer = document.getElementById('viewerContainer');
       const openNew = document.getElementById('open-new');
+      const downloadBtn = document.getElementById('download');
       const fileUrl = new URL(file, location.href).href;
-      openNew.href = fileUrl;
+      // Build a clean, same-origin URL for open/download (strip any search/hash like zoom hints)
+      const cleanUrlObj = new URL(file, location.origin);
+      cleanUrlObj.search = '';
+      cleanUrlObj.hash = '';
+      const cleanFileUrl = cleanUrlObj.href;
+      // Set open-in-new to the clean file URL
+      openNew.href = cleanFileUrl;
+      // Wire download button to trigger a real download with a suggested filename
+      const suggestedName = decodeURIComponent((cleanUrlObj.pathname.split('/').pop()) || 'document.pdf');
+      downloadBtn.addEventListener('click', () => {
+        const a = document.createElement('a');
+        a.href = cleanFileUrl;
+        a.setAttribute('download', suggestedName);
+        a.rel = 'noopener noreferrer';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      });
 
       const prevBtn = document.getElementById('prev');
       const nextBtn = document.getElementById('next');
@@ -96,7 +116,7 @@
             if (!rendered.get(p)) renderPage(p);
           }
         });
-      }, { root: document.getElementById('viewerContainer'), rootMargin: '200px' });
+      }, { root: viewerContainer, rootMargin: '200px' });
 
       function createPagePlaceholder(p){
         const wrapper = document.createElement('div');
@@ -182,7 +202,11 @@
         // ensure page is rendered then scroll into view
         renderPage(currentPage);
         const node = content.querySelector('[data-page="'+currentPage+'"]');
-        if (node) node.scrollIntoView({behavior:'smooth', block:'center'});
+        if (node) {
+          // Scroll only the inner container to keep the toolbar fixed/fully visible
+          const top = node.offsetTop - 20; // small padding
+          viewerContainer.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        }
       }
 
       prevBtn.addEventListener('click', ()=> gotoPage(currentPage-1));
