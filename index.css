@@ -536,6 +536,15 @@ footer {
     position: relative;
     top: -2px;
 }
+#projects-wrapper > div h3 a{
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease;
+    will-change: transform;
+}
+#projects-wrapper > div h3 a:hover{
+    transform: scale(1.03);
+    opacity: 0.9;
+}
 #projects-wrapper > div a:hover {
     text-decoration: underline;
     opacity: 0.5;
@@ -548,6 +557,13 @@ footer {
     margin: 1em 1em 1em -1em;
     opacity: 0.8;
     box-shadow: 2px 2px 0px 4px rgba(240, 240, 240, 0.5), -2px -2px 0px 0px var(--current-accent-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    will-change: transform;
+}
+#projects-wrapper img:hover {
+    transform: scale(1.06);
+    opacity: 1;
+    box-shadow: 4px 4px 0px 6px rgba(240, 240, 240, 0.6), -4px -4px 0px 0px var(--current-accent-color);
 }
 #projects-wrapper > div > span {
     border: 1px solid var(--current-accent-color);
@@ -724,11 +740,42 @@ footer {
 .img-container div img{
     width: 350px;
     box-shadow: 5px 5px 0px 2px var(--current-accent-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    will-change: transform;
+}
+.img-container div img:hover{
+    transform: scale(1.04);
+    opacity: 0.95;
+    box-shadow: 3px 3px 0px 2px var(--current-accent-color);
+}
+
+/* Make images inside project sections interactive as well (e.g., banners, GIFs) */
+section.project img{
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    will-change: transform;
+}
+section.project img:hover{
+    transform: scale(1.02);
+    opacity: 0.98;
 }
 
 /*PDF Wrapper*/
 .pdf-wrapper{
     width: 100%;
+}
+/* Ensure PDFs are readable, including on Safari */
+.pdf-wrapper iframe{
+    width: 100%;
+}
+/* Safari-only upscale of embedded PDF content */
+.safari-resume-scale .pdf-wrapper{
+    overflow: hidden;
+}
+.safari-resume-scale #resume-section .pdf-wrapper iframe{
+    transform: scale(1.25);
+    transform-origin: top left;
+    width: calc(100% / 1.25);
+    height: calc(1325px / 1.25);
 }
 
 /*Link*/
