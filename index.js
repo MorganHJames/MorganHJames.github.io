@@ -97,11 +97,19 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 
 // Project card clicks — any element with data-route
+function closeMobileMenu() {
+  const btn = document.getElementById('nav-hamburger');
+  const links = document.getElementById('nav-links');
+  if (btn) btn.classList.remove('open');
+  if (links) links.classList.remove('mobile-open');
+}
+
 function bindDataRoutes() {
   document.querySelectorAll('[data-route]').forEach(el => {
     el.addEventListener('click', e => {
       if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey) return;
       e.preventDefault();
+      closeMobileMenu();
       const route = el.getAttribute('data-route');
       location.hash = route;
     });
@@ -217,12 +225,33 @@ function setupYouTubeFallbacks() {
   });
 }
 
+// ── Mobile hamburger ──────────────────────────────────────────
+function bindHamburger() {
+  const btn = document.getElementById('nav-hamburger');
+  const links = document.getElementById('nav-links');
+  if (!btn || !links) return;
+
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    links.classList.toggle('mobile-open');
+  });
+
+  // Close menu when a nav link is tapped
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      links.classList.remove('mobile-open');
+    });
+  });
+}
+
 // Boot
 document.addEventListener('DOMContentLoaded', () => {
   bindDataRoutes();
   bindBackButtons();
   bindHeroCTAs();
   bindNavLogo();
+  bindHamburger();
   setupYouTubeFallbacks();
   const lb = buildLightbox();
   lb.bindImages();

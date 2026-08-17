@@ -547,12 +547,66 @@ section.visible { display: block; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
+/* ── Hamburger ───────────────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ── Responsive nav ──────────────────────────────────────────── */
-@media (max-width: 540px) {
-  .nav-links { gap: 1.2rem; }
-  .nav-links a { font-size: 0.75rem; }
-  .hero-stats { gap: 1.5rem; }
+@media (max-width: 620px) {
+  .nav-hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(10, 10, 15, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+    z-index: 99;
+  }
+  .nav-links.mobile-open { display: flex; }
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a {
+    display: block;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--accent); }
+
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
   .about-grid { grid-template-columns: 1fr; }
+  .float-container { grid-template-columns: 1fr; }
+  .abbey-screenshots { grid-template-columns: 1fr; }
 }
 
 /* ── Lightbox ─────────────────────────────────────────────── */
@@ -651,4 +705,92 @@ section.visible { display: block; }
 }
 @media (max-width: 640px) {
   .abbey-screenshots { grid-template-columns: 1fr; }
+}
+
+/* ── Hamburger button ────────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Responsive nav ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .nav-hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(10,10,15,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Mobile lightbox ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #lb-content {
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 95vw;
+    position: relative;
+  }
+  #lb-img {
+    max-width: 95vw;
+    max-height: 70vh;
+  }
+  #lb-prev {
+    position: fixed;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9001;
+  }
+  #lb-next {
+    position: fixed;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9001;
+  }
+  #lb-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9001;
+  }
 }
