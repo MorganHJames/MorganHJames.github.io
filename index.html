@@ -1,914 +1,709 @@
 <!doctype html>
 <html lang="en">
-  <!--Head-->
-  <head>
-    <!--Style Sheet-->
-    <link rel="stylesheet" type="text/css" href="index.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Morgan James — Senior Unity / XR Developer. 9+ years building immersive VR training platforms, games, and interactive applications.">
+  <meta name="keywords" content="Morgan James, Unity Developer, XR Developer, VR, C#, Portfolio, Game Developer">
+  <meta name="author" content="Morgan James">
+  <title>Morgan James</title>
 
-    <!--Meta-->
-    <meta charset="UTF-8">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Morgan Henry James | Game and Application Developer Portfolio | I am an experienced video game and application programmer with a passion for creating engaging and innovative projects. My extensive knowledge and skill set have been demonstrated through my contributions to published applications and games.">
-    <meta name="keywords" content="C#, Unity, Developer, Programmer, Morgan, Henry, James, Video Game, CV, Resume, Portfolio, Application">
-    <meta name="author" content="Morgan Henry James">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
-    <!--Font Import-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:800,900&display=swap" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="Resources/favicon/site.webmanifest">
 
-    <!--Logo-->
-    <link rel="apple-touch-icon" sizes="180x180" href="Resources/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Resources/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Resources/favicon/favicon-16x16.png">
-    <link rel="manifest" href="Resources/favicon/site.webmanifest">
-    <link rel="mask-icon" href="Resources/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!--Font Awseome-->
-    <script src="https://kit.fontawesome.com/47ac3d1431.js" crossorigin="anonymous"></script>
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/47ac3d1431.js" crossorigin="anonymous"></script>
 
-    <!--Title-->
-    <title>Morgan James</title>
-  </head>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
 
-  <!--Body-->
-  <body>
-    <!--Header-->
-    <header>
-      <!--Title-->
-      <h1 id="name">Morgan James</h1>
+  <!-- Boot scan-line -->
+  <div id="scanline"></div>
 
-      <!--MENU-->
-      <nav class="menu" id="top">
-        <div id="menList" class="list">
-            <a id="about-me" href="#/about"><div><h3>About Me</h3></div></a>
-            <a id="projects" class="active" href="#/projects"><div><h3>Projects</h3></div></a>
-            <a id="resume" href="#/resume"><div><h3>Résumé</h3></div></a>
-            <a id="contact-me" href="#/contact"><div><h3>Contact Me</h3></div></a>
-        </div>
-      </nav>
+  <!-- Nav -->
+  <nav class="site-nav">
+    <span class="nav-logo">Morgan<span class="accent-dot">.</span>James</span>
+    <ul class="nav-links">
+      <li><a id="about-me" href="#/about">About</a></li>
+      <li><a id="projects" href="#/projects">Projects</a></li>
+      <li><a id="resume" href="#/resume">Résumé</a></li>
+      <li><a id="contact-me" href="#/contact">Contact</a></li>
+    </ul>
+  </nav>
 
-      <!--Brightness Swap-->
-      <div id="brightswap">
-        <img src="Resources/sun-empty.svg" alt="">
-      </div>
-    </header>
-
-    <!--Slogan-->
-    <p id="slogan">
-      Senior Unity / XR Developer | Full-Stack Interactive Application Development | Passionate About Immersive Learning
+  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <section id="hero-section" class="visible">
+    <p class="hero-eyebrow">Senior Unity / XR Developer</p>
+    <h1 class="hero-name">Morgan<br>James<span class="accent-dot">.</span></h1>
+    <p class="hero-tagline">
+      <strong>9 years</strong> building immersive technology that teaches, trains, and inspires —
+      from VR nursing simulations to vocational training platforms reaching
+      <strong>250,000+ learners</strong> across the United States.
     </p>
-
-    <!--Watermark-->
-    <div>
-      <div class="watermark" onselectstart="return false">
-        JAMES
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">9+</div>
+        <div class="hero-stat-label">Years experience</div>
       </div>
-      <div class="watermark" onselectstart="return false">
-        MORGAN
+      <div>
+        <div class="hero-stat-num">330+</div>
+        <div class="hero-stat-label">VR simulations shipped</div>
       </div>
-      <div class="watermark" onselectstart="return false">
-        MORGAN JAMES
+      <div>
+        <div class="hero-stat-num">250k+</div>
+        <div class="hero-stat-label">Learners reached</div>
       </div>
     </div>
-  </body>
+    <div class="hero-cta">
+      <a href="#/projects" id="hero-projects" class="btn-primary">View my work <i class="fas fa-arrow-right"></i></a>
+      <a href="#/contact" id="hero-contact" class="btn-ghost">Get in touch</a>
+    </div>
+  </section>
 
-  <main>
-    <!--About me-->
-    <section id="about-me-section" class="section">
-			<h2>About me</h2>
-            <p>Since 2016, I’ve been driven by one goal: to make technology feel immersive, intuitive, and human. As a full-stack Unity developer, I’ve spent the last nine years creating VR simulations, games, and interactive applications that teach, train, and inspire, primarily within the Technical and Vocational Training industry.</p>
-            <p>My skill set spans the entire development pipeline—from UX and visual design, to front-end C# development and Unity implementation, and robust backend systems integration (e.g., AWS, API, SQL). I thrive on bringing every layer of a project together to build polished, seamless, and effective learning experiences.</p>
-            <p>In 2024, I was honored as the Most Recognized Mentor at the MIT Reality Hackathon, where I leveraged my technical depth and collaborative mindset to help teams bring complex XR visions to life.</p>
-            <p>I am actively seeking full-time Senior Unity / XR opportunities where I can contribute deep technical expertise and creativity to build impactful immersive training and simulation solutions.</p>
-    </section>
-
-    <!--Projects-->
-    <section id="projects-section" class="section">
-        <div id="projects-wrapper">
-            <div>
-                <div>
-                    <h3>
-                      <a href="#/transfr" id="transfr-project1">Transfr</a>
-                      <br>
-                      <em> - XR training and career exploration</em>
-                  </h3>
-                  <div class="tags">
-                      <span>C#</span>
-                      <span>Unity</span>
-                      <span>XR</span>
-                      <span>Training</span>
-                  </div>
-                  <br>
-                  <a href="#/transfr" id="transfr-project2">Read more...</a>
-              </div>
-  <a href="#/transfr" id="transfr-project3">
-                  <img src="Resources/Projects/Transfr/transfr-logo.jpg" alt="Transfr logo">
-        </a>
-            </div>
-            <div>
-              <div>
-                  <h3>
-                      <a href="#/spaceforge" id="spaceforge-project1">Space Forge</a>
-                      <br>
-                      <em> - Advanced space manufacturing</em>
-                  </h3>
-                  <div class="tags">
-                      <span>C#</span>
-                      <span>Unity</span>
-                      <span>XR</span>
-                      <span>R&D</span>
-                  </div>
-                  <br>
-                  <a href="#/spaceforge" id="spaceforge-project2">Read more...</a>
-              </div>
-  <a href="#/spaceforge" id="spaceforge-project3">
-          <img src="Resources/Projects/SpaceForge/spaceforge-logo.png" alt="Space Forge logo">
-        </a>
-            </div>
-            <div>
-              <div>
-                  <h3>
-                      <a href="#/drilling" id="drilling-project1">3t Drilling Systems</a>
-                      <br>
-                      <em> - Simulation and training</em>
-                  </h3>
-                  <div class="tags">
-                      <span>C#</span>
-                      <span>Unity</span>
-                      <span>Simulation</span>
-                      <span>Training</span>
-                  </div>
-                  <br>
-                  <a href="#/drilling" id="drilling-project2">Read more...</a>
-              </div>
-  <a href="#/drilling" id="drilling-project3">
-                  <img src="Resources/Projects/Drilling/drilling-logo.jpg" alt="Drilling Systems logo">
-        </a>
-            </div>
-            <div>
-              <div>
-                  <h3>
-                      <a href="#/mogis" id="mogis-project1">Mogi's Inferno</a>
-                      <br>
-                      <em> - Epic MegaJam 2025 entry</em>
-                  </h3>
-                  <div class="tags">
-                      <span>Blueprints</span>
-                      <span>Unreal</span>
-                      <span>Game Jam</span>
-                      <span>Windows</span>
-                  </div>
-                  <br>
-                  <a href="#/mogis" id="mogis-project2">Read more...</a>
-              </div>
-  <a href="#/mogis" id="mogis-project3">
-                  <img src="Resources/Projects/Mogis/mogis-logo.jpg" alt="Mogi's Inferno logo">
-        </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/ou" id="ou-project1">Open University VR</a>
-                        <br>
-                        <em> - A suite of VR<br>healthcare simulations</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>VR</span>
-                        <span>Simulation</span>
-                    </div>
-                    <br>
-                    <a href="#/ou" id="ou-project2">Read more...</a>
-                </div>
-                <a href="#/ou" id="ou-project3">
-                    <img src="Resources/Projects/OU/square.png" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/dtt" id="dtt-project1">DTT Apps</a>
-                        <br>
-                        <em> - Shipped apps<br>I made at DTT</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>CMS</span>
-                        <span>iOS/Android</span>
-                    </div>
-                    <br>
-                    <a href="#/dtt" id="dtt-project2">Read more...</a>
-                </div>
-                <a href="#/dtt" id="dtt-project3">
-                    <img src="Resources/Projects/DTT/square.png" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/esd" id="esd-project1">Emotional<br>Speed Dating</a>
-                        <br>
-                        <em> - An emotionally<br>driven game</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>Python</span>
-                        <span>Neural Network</span>
-                    </div>
-                    <br>
-                    <a href="#/esd" id="esd-project2">Read more...</a>
-                </div>
-                <a href="#/esd" id="esd-project3">
-                    <img src="Resources/Projects/ESD/square.png" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/cc" id="cc-project1">Card Cavern</a>
-                        <br>
-                        <em> - A roguelike card game</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>Procedural</span>
-                        <span>Indie Game</span>
-                    </div>
-                    <br>
-                    <a href="#/cc" id="cc-project2">Read more...</a>
-                </div>
-                <a href="#/cc" id="cc-project3">
-                    <img src="Resources/Projects/CC/square.jpg" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/ysob" id="ysob-project1">Yokai<br>Spirits of Battle!</a>
-                        <br>
-                        <em> - A 3D fighting game</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>3D</span>
-                        <span>Local Multiplayer</span>
-                    </div>
-                    <br>
-                    <a href="#/ysob" id="ysob-project2">Read more...</a>
-                </div>
-                <a href="#/ysob" id="ysob-project3">
-                    <img src="Resources/Projects/YSOB/square.png" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/mii" id="mii-project1">Character<br>Creator</a>
-                        <br>
-                        <em> - Create custom<br>characters</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>Custom</span>
-                        <span>Generation</span>
-                    </div>
-                    <br>
-                    <a href="#/mii" id="mii-project2">Read more...</a>
-                </div>
-                <a href="#/mii" id="mii-project3">
-                    <img src="Resources/Projects/MII/square.png" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/atwu" id="atwu-project1">All the way USA!</a>
-                        <br>
-                        <em> - A fun AR infographic</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>AR</span>
-                        <span>XR</span>
-                    </div>
-                    <br>
-                    <a href="#/atwu" id="atwu-project2">Read more...</a>
-                </div>
-                <a href="#/atwu" id="atwu-project3">
-                    <img src="Resources/Projects/ATWU/square.jpg" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/ls" id="ls-project1">Loot Swipe</a>
-                        <br>
-                        <em> - Solve the maze<br>of the sea</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>24H</span>
-                        <span>Puzzle</span>
-                    </div>
-                    <br>
-                    <a href="#/ls" id="ls-project2">Read more...</a>
-                </div>
-                <a href="#/ls" id="ls-project3">
-                    <img src="Resources/Projects/LS/square.png" alt="">
-                </a>
-            </div>
-            
-          <div>
-              <div>
-                  <h3>
-                        <a href="#/ust" id="ust-project1">Unity Shader<br>Tutorial</a>
-                        <br>
-                        <em> - An introduction to<br>the world of shaders</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C#</span>
-                        <span>Unity</span>
-                        <span>HLSL</span>
-                        <span>ShaderLab</span>
-                    </div>
-                    <br>
-                    <a href="#/ust" id="ust-project2">Read more...</a>
-                </div>
-                <a href="#/ust" id="ust-project3">
-                    <img src="Resources/Projects/UST/square.jpg" alt="">
-                </a>
-            </div>
-            <div>
-                <div>
-                    <h3>
-                        <a href="#/kr" id="kr-project1">Koopa's Revenge</a>
-                        <br>
-                        <em> - A twist on a classic<br>made for Game Boy</em>
-                    </h3>
-                    <div class="tags">
-                        <span>C</span>
-                        <span>C++</span>
-                        <span>Game Boy</span>
-                        <span>Visual Studio</span>
-                    </div>
-                    <br>
-                    <a href="#/kr" id="kr-project2">Read more...</a>
-                </div>
-                <a href="#/kr" id="kr-project3">
-                    <img src="Resources/Projects/KR/square.jpg" alt="">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!--Resume-->
-    <section id="resume-section" class="section">
-      <div class="pdf-wrapper">
-  <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FResume%2FCV-Morgan-James.pdf%3F%23zoom%3D110" height="1325px" width="100%"></iframe>
-      </div>
-    </section>
-
-    <!--Contact me-->
-    <section id="contact-me-section" class="section">
-			<h2>Contact me</h2>
-        <div>
-          <a href="mailto:morganhmjames@gmail.com" description="Mail" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope" onmouseover='displayDescriptionOnLinks("fa-envelope");'></i>
-            email</a>
-          <a href="https://www.linkedin.com/in/morganhjames/" description="Linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"> </i>
-            linkedin</a>
-          <a href="https://github.com/MorganHJames" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>
-            github</a>
-        </div>
-    </section>
-
-    <!--MII Project-->
-    <section id="mii-project-section" class="section" class="project">
-			<h2>Character Creator</h2>
-        <div class="videocontainer">
-        <iframe src="https://www.youtube.com/embed/S37pAxWAH8M?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p>I developed a character creator that replicates the functionality of the Nintendo Wii Mii creator. This PC application enables users to create custom characters, selecting from a wide range of options including height, weight, voice pitch, animation style, skin color, hair, eyes, nose, hats, facial hair, accessories, top, gloves, back accessory, waist accessory, pants, and shoes. Each option can be customized with any color. The application also includes an option to randomly generate a character. Once a character is created, it is saved and appears in the character lobby, where users can view, edit, or delete previous characters. Additionally, users can perform a role call, which organizes all characters in a line. The application is available for download as an executable, and the source code is available on GitHub.</p>
-      <div class="linkGrid">
-        <div>
-        <a href="https://github.com/MorganHJames/CharacterCreator" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-          github</a>
-        <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211983&authkey=AOqtfzRAWcPB6eQ" description="Download" rel="noopener noreferrer"><i class="fas fa-download"> </i>
-          download</a>
-        </div>
-      </div>
-      <div class="img-container">
-        <div>
-          <h3>General Options</h3>
-          <img src="Resources/Projects/MII/general.png" alt="">
-        </div>
-        <div>
-          <h3>Wandering</h3>
-          <img src="Resources/Projects/MII/Wandering.png" alt="">
-        </div>
-        <div>
-          <h3>Upper Body</h3>
-          <img src="Resources/Projects/MII/chest selectors.png" alt="">
-        </div>
-        <div>
-          <h3>Lined Up</h3>
-          <img src="Resources/Projects/MII/lined up.png" alt="">
-        </div>
-        <div>
-          <h3>Color Picker</h3>
-          <img src="Resources/Projects/MII/color selector.png" alt="">
-        </div>
-        <div>
-          <h3>Picked Up</h3>
-          <img src="Resources/Projects/MII/picked up.png" alt="">
-        </div>
-      </div>
-    </section>
-    
-    <!--ESD Project-->
-    <section id="esd-project-section" class="section" class="project">
-			<h2>Emotional Speed Dating</h2>
-      <div class="videocontainer">
-        <iframe src="https://www.youtube.com/embed/oDybJPycFEU?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <div class="float-container">
-        <div class="float-child-left">
-          <div class="pdf-wrapper">
-            <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FESD%2FCT6007%20Morgan%20James%20IRP-converted.pdf%3F%23zoom%3D70" height="800px" width="100%"></iframe>
-          </div>
-        </div>
-        <div class="float-child-right">
-            <p>Emotional Speed Dating is the outcome of a research project on human emotion detection and machine learning. I designed the study to examine emotion detection and applied it by creating a Unity/C# game that uses emotion as an input. The game simulates a speed dating event, and the objective is to find true love by empathizing with your dates (mimicking their emotions). A convolutional neural network powers the emotion detection. The study’s methods and findings can be read in full, or summarized in the poster below. Through this project, I aimed to deepen my understanding of emotion detection and machine learning applications in games.</p>
-          <div class="linkGrid">
-            <div>
-            <a href="https://github.com/MorganHJames/EmotionalSpeedDating" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-              github</a>
-            <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211979&authkey=AHMEtKqXuBQ58B8" description="Download" rel="noopener noreferrer"><i class="fas fa-download"> </i>
-              download</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="pdf-wrapper">
-  <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FESD%2FPoster.pdf%3F%23zoom%3D75" height="905px" width="100%"></iframe>
-      </div>
-    </section>
-
-    <!--CC Project-->
-    <section id="cc-project-section" class="section" class="project">
-			<h2>Card Cavern</h2>
-      <div class="videocontainer">
-        <iframe src="https://www.youtube.com/embed/uBeihP_CFmg?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p>I developed Card Cavern, a roguelike card game using Unity and C#, in just under 12 weeks while juggling other projects. The goal of this project was to showcase my ability to bring a product to market within a set timeframe, and also demonstrate my knowledge of implementing monetization within applications, which is highlighted by the in-app purchases within the game. Additionally, I used this project as an opportunity to improve my art skills, as all the art in the game was created by me. One of the requirements of this project was to keep a development log which can be seen below. The game is now available on the Google Play Store and the source code can be found on GitHub.</p>
-      <div class="linkGrid">
-        <div>
-        <a href="https://github.com/MorganHJames/CardCavern" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-          github</a>
-        <a href="https://play.google.com/store/apps/details?id=com.MorganHJames.CardCavern" description="Google Play Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"> </i>
-          google play</a>
-        </div>
-      </div>
-      <iframe src="https://onedrive.live.com/embed?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211986&authkey=AMRTELzMire-bPY&em=2" height="700px" width="100%"></iframe>
-      <div class="img-container">
-        <div>
-          <h3>Main Menu</h3>
-          <img src="Resources/Projects/CC/Main Menu.png" alt="">
-        </div>
-        <div>
-          <h3>Attacking</h3>
-          <img src="Resources/Projects/CC/Attacking.png" alt="">
-        </div>
-        <div>
-          <h3>Exploding</h3>
-          <img src="Resources/Projects/CC/Exploding.png" alt="">
-        </div>
-        <div>
-          <h3>Game Over</h3>
-          <img src="Resources/Projects/CC/Game Over.png" alt="">
-        </div>
-        <div>
-          <h3>Boomerang</h3>
-          <img src="Resources/Projects/CC/Boomerang.png" alt="">
-        </div>
-        <div>
-          <h3>Discarding</h3>
-          <img src="Resources/Projects/CC/Discarding.png" alt="">
-        </div>
-      </div>
-    </section>
-    
-    <!--ATWU Project-->
-    <section id="atwu-project-section" class="section" class="project">
-			<h2>All the way USA!</h2>
-      <img src="Resources/Projects/ATWU/banner.jpg" width="100%" alt="">
-      <div class="float-container">
-        <div class="float-child-left">
-          <div class="pdf-wrapper">
-            <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FATWU%2FDesignDocument.pdf%3F%23zoom%3D70" height="800px" width="100%"></iframe>
-          </div>
-        </div>
-        <div class="float-child-right">
-            <p>I created All the way USA!, an Augmented Reality mobile application, to increase my knowledge of the individual states of the USA. The app is built using the third-party package Vuforia, which handles the majority of the AR functionality. The app displays a 3D map of the USA on a dollar bill when the camera detects one. The user can interact with the map by scaling it with a pinching gesture and toggle different features such as state names, state abbreviations, and capital cities. By selecting a state, the user can reveal more information about the state, including its flag, seal, and a brief article about its history and statistics. Additionally, the app includes three quizzes that test the user's knowledge of the states' names, flags, and capital cities. The user earns a point for correctly identifying the corresponding landmass on the first try, and their high score is saved in the app and displayed over the testing buttons. Unfortunately, since the app was created with the free version of Vuforia, I am not able to distribute it on the Google Play store or Apple App store without purchasing a subscription, but the download link is provided for the Android APK.</p>
-          <div class="linkGrid">
-            <div>
-            <a href="https://github.com/MorganHJames/All-the-way-USA-" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-              github</a>
-            <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211982&authkey=ABvMkdSjI1ksOTY" description="Download" rel="noopener noreferrer"><i class="fas fa-download"></i>
-              download</a>
-            </div>
-          </div>  
+  <!-- ── ABOUT ──────────────────────────────────────────────── -->
+  <section id="about-me-section">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>Since 2016, I've been driven by one goal: to make technology feel <strong>immersive, intuitive, and human</strong>. As a full-stack Unity developer, I've spent the last nine years creating VR simulations, games, and interactive applications that teach, train, and inspire.</p>
+        <p>My skill set spans the entire development pipeline — from UX and visual design, to front-end C# and Unity, to robust backend systems integration (Azure, REST APIs, PostgreSQL). I thrive on bringing every layer of a project together to build polished, seamless, effective experiences.</p>
+        <p>In 2024 I was honoured as the <strong>Most Recognised Mentor at the MIT Reality Hackathon</strong>, where I helped teams bring complex XR visions to life. I'm actively seeking full-time Senior Unity / XR opportunities where I can contribute deep technical expertise to impactful immersive products.</p>
+        <div class="hero-cta" style="margin-top:1.5rem;">
+          <a href="Resources/Resume/CV-Morgan-James.pdf" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-download"></i> Download CV</a>
         </div>
       </div>
       <div>
-        <div class="img-container">
-          <div>
-            <h3>Test Your Knowledge</h3>
-            <img src="Resources/Projects/ATWU/test.jpg" alt="">
+        <div class="skills-group">
+          <h4>Core</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Unity 3D</span><span class="skill-pill">C#</span><span class="skill-pill">HLSL</span><span class="skill-pill">ShaderGraph</span><span class="skill-pill">XR Plugin Management</span>
           </div>
-          <div>
-            <h3>Info On Each State</h3>
-            <img src="Resources/Projects/ATWU/info.jpg" alt="">
+        </div>
+        <div class="skills-group">
+          <h4>Platforms</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Meta Quest</span><span class="skill-pill">Pico VR</span><span class="skill-pill">iOS</span><span class="skill-pill">Android</span><span class="skill-pill">WebGL</span>
           </div>
-          <div>
-            <h3>Scaled Small</h3>
-            <img src="Resources/Projects/ATWU/small.jpg" alt="">
+        </div>
+        <div class="skills-group">
+          <h4>Backend & Web</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">React</span><span class="skill-pill">Node.js</span><span class="skill-pill">TypeScript</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">Azure</span><span class="skill-pill">REST APIs</span>
           </div>
-          <div>
-            <h3>Scaled Large</h3>
-            <img src="Resources/Projects/ATWU/large.jpg" alt="">
+        </div>
+        <div class="skills-group">
+          <h4>Tools</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Git</span><span class="skill-pill">Jira</span><span class="skill-pill">Jenkins</span><span class="skill-pill">GitHub Actions</span><span class="skill-pill">Docker</span><span class="skill-pill">Blender</span>
           </div>
-          <div>
-            <h3>Start Screen</h3>
-            <img src="Resources/Projects/ATWU/start.jpg" alt="">
-          </div>
-          <div>
-            <h3>3D Model</h3>
-            <img src="Resources/Projects/ATWU/full map.png" alt="">
+        </div>
+        <div class="skills-group">
+          <h4>AI & ML</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">LLM API integration</span><span class="skill-pill">CNN</span><span class="skill-pill">GitHub Copilot</span><span class="skill-pill">Cursor</span>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!--UST Project-->
-    <section id="ust-project-section" class="section" class="project">
-			<h2>Unity Shader Tutorial</h2>
-      <div class="videocontainer">
-        <iframe src="https://www.youtube.com/embed/fp89rfT4tqI?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <p>I created a tutorial on shaders in Unity as a project to deepen my understanding and share that knowledge with others. The tutorial, written in C#, teaches the basics of shader programming and enables learners to create their own shaders. It has been well received, with over 22,000 views and a 95.25% like-to-dislike ratio. The tutorial includes a final project containing all shaders and a downloadable link to support learning. For those who prefer reading, a transcript of the tutorial is also available.</p>
-      <div class="link">
-        <div>
-          <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211980&authkey=AIfJYVjYCkO60VU" description="Download" rel="noopener noreferrer"><i class="fas fa-download"> </i>
-            download</a>
-        </div>
-      </div>
-      <div class="pdf-wrapper">
-  <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FUST%2FUnity%20Shader%20Tutorial.pdf%3F%23zoom%3D110" height="1250px" width="100%"></iframe>
-      </div>
-    </section>
-    
-    <!--KR Project-->
-    <section id="kr-project-section" class="section" class="project">
-			<h2>Koopa's Revenge</h2>
-    <div class="videocontainer">
-  <iframe src="https://www.youtube.com/embed/n846uP1NFVc?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-      <p>I created Koopa's Revenge, a game for the Game Boy, with the goal of incorporating both sprites and particle effects into the game scene. The game was developed in C/C++ using Visual Studio and the NO$GBA emulator/debugger. One of the challenges of this project was the limited documentation available for GBA programming and the lack of robust debugging tools. Despite these challenges, I found the experience to be a great learning opportunity for understanding the fundamentals of hardware programming and I enjoyed the process. The NO$GBA emulator I used for this game is available at this <a href="https://www.nogba.com/no$gba-download.htm" description="Emulator" target="_blank" rel="noopener noreferrer"><u>link</u></a>, and the game file can be found on the GitHub repository.</p>
-      <div class="link">
-        <div>
-          <a href="https://github.com/MorganHJames/KoopaRevenge" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-            github</a>
-        </div>
+
+    <!-- Career timeline -->
+    <p class="section-label" style="margin-top:3.5rem;">Experience</p>
+    <h2 class="section-title">Career Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-date">May 2026 – Present</div>
+        <div class="tl-role">Full-Stack & Solutions Engineer</div>
+        <div class="tl-company">Abbey Tent & Party Rentals · Fairfield, CT</div>
+        <div class="tl-desc">Built a full-stack dispatch management system from scratch — React/Vite, Node.js/TypeScript, PostgreSQL on Railway. GPS fleet tracking, auto-planner algorithm, real-time WebSocket sync, multi-user auth, and print-ready schedule generation. Identified the problems by working as a delivery driver first.</div>
       </div>
-      <img src="Resources/Projects/KR/gif.gif" width="100%"></img>
-    </section>
-  
-  <!--Transfr Project-->
-  <section id="transfr-project-section" class="section" class="project">
-      <h2>Transfr</h2>
-      <div class="videocontainer">
-  <iframe src="https://www.youtube.com/embed/WJrkz9JcnBw?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="timeline-item">
+        <div class="tl-date">Apr 2022 – Oct 2025</div>
+        <div class="tl-role">Senior Unity Developer</div>
+        <div class="tl-company">Transfr · New York City, NY</div>
+        <div class="tl-desc">Co-developed the no-code SDK powering 330+ VR vocational training simulations delivered to 250,000+ learners across 1,110 US locations. Built the unified launcher from scratch, introduced AutoDriver QA automation, and integrated Azure REST APIs for real-time learner analytics.</div>
       </div>
-      <p>At Transfr, I contributed to groundbreaking VR-based career exploration and skills training solutions that transformed workforce development across the United States. As a key developer, I engineered custom VR job training simulations that enhanced engagement and training efficacy across diverse vocational courses. I significantly improved the development pipeline by optimizing the company's in-house SDK and authoring comprehensive technical documentation, streamlining onboarding for both technical and non-technical team members. I also played a crucial role in redesigning and implementing a unified launcher for all simulation products, improving user flow and accessibility. The platform's impact has been substantial, reaching over 275,000 learners across 48 states, with more than 1 million training simulations completed through 1,100+ implementations nationwide.</p>
-      <div class="videocontainer" style="margin-top:1em;">
-  <iframe src="https://www.youtube.com/embed/7AEVOK6ftBE?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="timeline-item">
+        <div class="tl-date">Jan 2022 – Mar 2022</div>
+        <div class="tl-role">Unity Software Developer</div>
+        <div class="tl-company">Space Forge · Cardiff, Wales, UK</div>
+        <div class="tl-desc">Built the ForgeStar® mission control UI — aggregating live telemetry, weather, and hazard data into an interactive globe. Prototyped an AR manufacturing assembly workflow validated as a cost-reduction pilot.</div>
       </div>
-      <div class="link">
-        <div>
-          <a href="https://transfrinc.com/" description="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i>
-            website</a>
-        </div>
+      <div class="timeline-item">
+        <div class="tl-date">Aug 2021 – Jan 2022</div>
+        <div class="tl-role">Graphics Programmer</div>
+        <div class="tl-company">3t Drilling Systems · Bournemouth, UK</div>
+        <div class="tl-desc">Maintained and optimised rendering across 1,500+ industrial simulators in 60+ countries. Engineered a branding asset-swap system adopted by Shell, Chevron, BP and the majority of major enterprise clients.</div>
       </div>
+      <div class="timeline-item">
+        <div class="tl-date">Jun 2020 – Jun 2021</div>
+        <div class="tl-role">Unity VR Developer</div>
+        <div class="tl-company">The Open University · Milton Keynes, UK</div>
+        <div class="tl-desc">Delivered 12 VR healthcare simulations for Oculus Quest — venepuncture, catheterisation, wound care, phlebotomy, and more — working directly with clinical subject matter experts. Built the core interaction infrastructure from scratch.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Jul 2018 – Jul 2019</div>
+        <div class="tl-role">Unity Developer</div>
+        <div class="tl-company">DTT · Amsterdam, Netherlands</div>
+        <div class="tl-desc">Shipped 6 consumer apps and games across iOS, Android, and WebGL. Core developer on Edu Play Book, Flip Puzzle, and At Mouse's House. Built the CMS integration, level editor, and Web API for community-created content.</div>
+      </div>
+    </div>
   </section>
 
-  <!--Space Forge Project-->
-  <section id="spaceforge-project-section" class="section" class="project">
-      <h2>Space Forge</h2>
+  <!-- ── PROJECTS ────────────────────────────────────────────── -->
+  <section id="projects-section">
+    <p class="section-label">Portfolio</p>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">A selection of professional work and personal projects — click any card to read more.</p>
+    <div class="projects-grid">
+
+      <div class="project-card" id="transfr-project1">
+        <img class="project-card-img logo-pad" src="Resources/Projects/Transfr/transfr-logo.jpg" alt="Transfr">
+        <div class="project-card-body">
+          <div class="project-card-title">Transfr</div>
+          <div class="project-card-sub">XR career exploration and vocational training — 250,000+ learners, 330+ simulations</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>XR</span><span>Training</span><span>Azure</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="ou-project1">
+        <img class="project-card-img" src="Resources/Projects/OU/square.png" alt="Open University VR">
+        <div class="project-card-body">
+          <div class="project-card-title">Open University VR</div>
+          <div class="project-card-sub">12 VR healthcare simulations for Oculus Quest, built with clinical experts</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>VR</span><span>Healthcare</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="spaceforge-project1">
+        <img class="project-card-img logo-pad" src="Resources/Projects/SpaceForge/spaceforge-logo.png" alt="Space Forge">
+        <div class="project-card-body">
+          <div class="project-card-title">Space Forge</div>
+          <div class="project-card-sub">ForgeStar® satellite mission control UI and AR manufacturing workflow</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>AR</span><span>Telemetry</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="drilling-project1">
+        <img class="project-card-img logo-pad" src="Resources/Projects/Drilling/drilling-logo.jpg" alt="3t Drilling">
+        <div class="project-card-body">
+          <div class="project-card-title">3t Drilling Systems</div>
+          <div class="project-card-sub">Rendering and deployment across 1,500+ industrial simulators in 60+ countries</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>Simulation</span><span>Graphics</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="mogis-project1">
+        <img class="project-card-img logo-pad" src="Resources/Projects/Mogis/mogis-logo.jpg" alt="Mogi's Inferno">
+        <div class="project-card-body">
+          <div class="project-card-title">Mogi's Inferno</div>
+          <div class="project-card-sub">Epic MegaJam 2025 — shipped Unreal Engine 5 game in one week</div>
+          <div class="tags"><span>Blueprints</span><span>Unreal</span><span>Game Jam</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="dtt-project1">
+        <img class="project-card-img" src="Resources/Projects/DTT/square.png" alt="DTT Apps">
+        <div class="project-card-body">
+          <div class="project-card-title">DTT Apps</div>
+          <div class="project-card-sub">6 shipped apps on iOS, Android & WebGL — Edu Play Book, Flip Puzzle, At Mouse's House</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>iOS</span><span>Android</span><span>CMS</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="esd-project1">
+        <img class="project-card-img" src="Resources/Projects/ESD/square.png" alt="Emotional Speed Dating">
+        <div class="project-card-body">
+          <div class="project-card-title">Emotional Speed Dating</div>
+          <div class="project-card-sub">Game driven by real-time CNN facial emotion detection — final year research project</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>Python</span><span>Neural Network</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="cc-project1">
+        <img class="project-card-img" src="Resources/Projects/CC/square.jpg" alt="Card Cavern">
+        <div class="project-card-body">
+          <div class="project-card-title">Card Cavern</div>
+          <div class="project-card-sub">Roguelike card game on Google Play — built in 12 weeks, all art by me</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>Procedural</span><span>Indie</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="ust-project1">
+        <img class="project-card-img" src="Resources/Projects/UST/square.jpg" alt="Unity Shader Tutorial">
+        <div class="project-card-body">
+          <div class="project-card-title">Unity Shader Tutorial</div>
+          <div class="project-card-sub">25,000+ views, 95% positive rating — introduction to HLSL shaders in Unity</div>
+          <div class="tags"><span>C#</span><span>HLSL</span><span>ShaderLab</span><span>Tutorial</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="ysob-project1">
+        <img class="project-card-img" src="Resources/Projects/YSOB/square.png" alt="Yokai">
+        <div class="project-card-body">
+          <div class="project-card-title">Yokai — Spirits of Battle!</div>
+          <div class="project-card-sub">Local multiplayer 3D fighting game inspired by Japanese folklore</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>3D</span><span>Multiplayer</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="mii-project1">
+        <img class="project-card-img" src="Resources/Projects/MII/square.png" alt="Character Creator">
+        <div class="project-card-body">
+          <div class="project-card-title">Character Creator</div>
+          <div class="project-card-sub">Full Wii Mii-style character creator built in Unity — downloadable PC app</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>Custom</span><span>Generation</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="atwu-project1">
+        <img class="project-card-img" src="Resources/Projects/ATWU/square.jpg" alt="All the Way USA">
+        <div class="project-card-body">
+          <div class="project-card-title">All the Way USA!</div>
+          <div class="project-card-sub">AR mobile app — 3D USA map on a dollar bill with quizzes and state info</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>AR</span><span>Vuforia</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="ls-project1">
+        <img class="project-card-img" src="Resources/Projects/LS/square.png" alt="Loot Swipe">
+        <div class="project-card-body">
+          <div class="project-card-title">Loot Swipe</div>
+          <div class="project-card-sub">Mobile maze puzzle game built in 24 hours — on Google Play</div>
+          <div class="tags"><span>C#</span><span>Unity</span><span>Procedural</span><span>Puzzle</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" id="kr-project1">
+        <img class="project-card-img" src="Resources/Projects/KR/square.jpg" alt="Koopa's Revenge">
+        <div class="project-card-body">
+          <div class="project-card-title">Koopa's Revenge</div>
+          <div class="project-card-sub">Game Boy game written in C/C++ — sprites, particles, hardware programming</div>
+          <div class="tags"><span>C</span><span>C++</span><span>Game Boy</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── RESUME ──────────────────────────────────────────────── -->
+  <section id="resume-section">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Résumé</h2>
+    <p class="section-sub">Full career history, skills, and achievements.</p>
+    <div class="hero-cta">
+      <a href="Resources/Resume/CV-Morgan-James.pdf" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-download"></i> Download PDF</a>
+    </div>
+    <div class="pdf-wrapper" style="margin-top:1.5rem;">
+      <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FResume%2FCV-Morgan-James.pdf%3F%23zoom%3D110" height="1325px" width="100%"></iframe>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────────────── -->
+  <section id="contact-me-section">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Contact Me</h2>
+    <p class="section-sub">Open to full-time senior Unity / XR roles, remote or commutable to the CT / NYC area.</p>
+    <div class="contact-grid">
+      <a class="contact-link" href="mailto:morganhmjames@gmail.com" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-envelope"></i> morganhmjames@gmail.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/morganhjames/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin-in"></i> linkedin.com/in/morganhjames
+      </a>
+      <a class="contact-link" href="https://github.com/MorganHJames" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> github.com/MorganHJames
+      </a>
+    </div>
+  </section>
+
+  <!-- ── PROJECT DETAIL SECTIONS ────────────────────────────── -->
+
+  <section id="transfr-project-section" class="project">
+    <p class="project-back" id="transfr-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Transfr</h1>
+    <p class="project-detail-sub">Senior Unity Developer · Apr 2022 – Oct 2025</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/WJrkz9JcnBw?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>At Transfr, I contributed to groundbreaking VR-based career exploration and skills training solutions that transformed workforce development across the United States. As a key developer, I engineered custom VR job training simulations that enhanced engagement and training efficacy across diverse vocational courses.</p>
+      <p>I significantly improved the development pipeline by co-developing the company's internal no-code SDK, enabling ~6 in-house XR Designers and multiple partner studios to create simulations independently. I also designed and implemented the unified launcher from scratch, reducing the time to enter a simulation by several minutes per learner and consolidating all products into a single entry point.</p>
+      <p>The platform's impact has been substantial, reaching over 250,000 learners across the US, with more than 500,000 training simulations completed through 1,110+ implementations nationwide.</p>
+    </div>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/7AEVOK6ftBE?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-links">
+      <a href="https://transfrinc.com/" target="_blank" rel="noopener" class="btn-ghost"><i class="fas fa-globe"></i> Website</a>
+    </div>
+  </section>
+
+  <section id="spaceforge-project-section" class="project">
+    <p class="project-back" id="spaceforge-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Space Forge</h1>
+    <p class="project-detail-sub">Unity Software Developer · Jan 2022 – Mar 2022</p>
     <div class="float-container">
       <div class="float-child-left">
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Built in Cardiff.<br>Bound for orbit.<br><br>Designed to make next-gen materials that will transform entire industries.<br><br>But before ForgeStar®-1 left the hangar, it got a send-off like no other - a performance by the Caerphilly Male Voice Choir, that hit all the right notes and set the… <a href="https://t.co/VQdGt7JWKk">pic.twitter.com/VQdGt7JWKk</a></p>&mdash; Space Forge (@Space_Forge) <a href="https://twitter.com/Space_Forge/status/1917142215010267639?ref_src=twsrc%5Etfw">April 29, 2025</a></blockquote>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Built in Cardiff. Bound for orbit.<br><br>Designed to make next-gen materials that will transform entire industries. <a href="https://t.co/VQdGt7JWKk">pic.twitter.com/VQdGt7JWKk</a></p>&mdash; Space Forge (@Space_Forge) <a href="https://twitter.com/Space_Forge/status/1917142215010267639?ref_src=twsrc%5Etfw">April 29, 2025</a></blockquote>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class="float-child-right">
-        <p>Space Forge is pioneering revolutionary space manufacturing technology focused on producing ultra-high quality semiconductor substrates using space-derived crystal seeds. I played a key role in developing their innovative satellite system, designing and implementing the full user interface to ensure seamless, high-performance data visualization. By leveraging the unique properties of the space environment - including microgravity for perfect crystal formation, vacuum conditions for eliminating contamination, and near-zero temperatures for optimal processing - I helped develop solutions that set new standards for semiconductor manufacturing. I pioneered advanced factory solutions using cutting-edge XR technologies, successfully validating a pilot program for cost reduction in complex manufacturing workflows. Additionally, I integrated back-end telemetry data with the front-end interface to create a dynamic, user-specific profile display system for the ForgeStar® Platform.</p>
-        <div class="link">
-          <div>
-            <a href="https://www.spaceforge.com/" description="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i>
-              website</a>
-          </div>
+        <p>Space Forge is pioneering revolutionary space manufacturing technology focused on producing ultra-high quality semiconductor substrates. I played a key role in developing their innovative satellite system, designing and implementing the full user interface for the ForgeStar® Platform — aggregating live telemetry, weather patterns, and hazard zones into a single interactive globe.</p>
+        <p>I also pioneered an AR-assisted manufacturing assembly workflow using Vuforia image targets, successfully validated as a pilot program for cost reduction in complex manufacturing workflows.</p>
+        <div class="project-links">
+          <a href="https://www.spaceforge.com/" target="_blank" rel="noopener" class="btn-ghost"><i class="fas fa-globe"></i> Website</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!--Drilling Systems Project-->
-  <section id="drilling-project-section" class="section" class="project">
-      <h2>3t Drilling Systems</h2>
-      <div class="videocontainer">
-  <iframe src="https://www.youtube.com/embed/lnlL-o2hhsI?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p>At 3t Drilling Systems, I worked on cutting-edge simulation technology solutions designed to enhance safety and efficiency in the oil and gas sector. As the world's leading provider of drilling simulators with over 1,500 simulators deployed across more than 60 countries, I provided crucial global deployment and performance support across three continents, ensuring mission-critical stability for clients including Shell, Chevron, and BP. I developed innovative visualization applications for V-walls, Dome displays, and VR environments, significantly enhancing the user experience and training fidelity of high-fidelity simulations for drilling operations, well control, crane operations, and well intervention training. Additionally, I spearheaded Unity framework maintenance and upgrades across the project portfolio, ensuring a stable and efficient development platform for the company's diverse range of training solutions.</p>
-      <div class="link">
-        <div>
-          <a href="https://www.3tglobal.com/3t-drilling-systems/" description="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i>
-            website</a>
-        </div>
-      </div>
-  </section>
-
-  <!--Mogi's Inferno Project-->
-  <section id="mogis-project-section" class="section" class="project">
-      <h2>Mogi's Inferno</h2>
-      <div class="videocontainer">
-  <iframe src="https://www.youtube.com/embed/VjjDc9QEiFg?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p>Created for the Epic MegaJam 2025 with the theme "Here We Go Again," Mogi's Inferno is an intense escape challenge where players must learn and optimize their route through multiple attempts. Starting at the entrance of an apartment building, players have just 3 minutes to reach the evacuation helicopter waiting on the roof. Through each "failed" attempt, players discover critical shortcuts, item locations, and hazards to avoid, gradually building the knowledge needed to complete a successful speedrun within the time limit.</p>
-      <div class="link">
-        <div>
-          <a href="https://gilesemery.itch.io/mogis-inferno" description="itch.io" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i>
-            itch.io page</a>
-        </div>
-      </div>
-  </section>
-
-    <!--LS Project-->
-    <section id="ls-project-section" class="section" class="project">
-			<h2>Loot Swipe</h2>
-      <img src="Resources/Projects/LS/long.jpg" alt="">
-      <p>I created Loot Swipe, a mobile game, in under 24 hours using C# and Unity. The objective is to collect loot by navigating through a maze of floating crates. The maze is generated using Prim's algorithm, and players can adjust its complexity. One of the biggest challenges was ensuring the maze remained on-screen regardless of complexity. The game is available on the Google Play Store, and the source code can be found in the GitHub repository.</p>
-      <div class="linkGrid">
-        <div>
-        <a href="https://github.com/MorganHJames/LootSwipe" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-          github</a>
-        <a href="https://play.google.com/store/apps/details?id=com.MorganJames.LootSwipe" description="Google Play Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"> </i>
-          google play</a>
-        </div>
-      </div>
-      <div class="img-container">
-        <div>
-          <h3>Menu</h3>
-          <img src="Resources/Projects/LS/menu.jpg" alt="">
-        </div>
-        <div>
-          <h3>Default Complexity</h3>
-          <img src="Resources/Projects/LS/game.jpg" alt="">
-        </div>
-        <div>
-          <h3>Settings</h3>
-          <img src="Resources/Projects/LS/igmenu.jpg" alt="">
-        </div>
-      </div>
-    </section>
-    
-    <!--DTT Project-->
-    <section id="dtt-project-section" class="section" class="project">
-			<h2>Projects I worked on at DTT</h2>
-      <div class="float-container">
-        <div class="float-child-left">
-          <h3>Edu Play Book</h3>
-          <p>I was a main developer on Edu Play Book, an educational children's application that features games, puzzles, and stories in multiple languages. I was responsible for creating many of the core systems of the app, including integrating a Content Management System within the books, developing a recording feature, creating an interactive home scene, and designing many of the games. These are just a few examples of the parts of the app that I worked on.</p>
-          <div class="linkGrid">
-            <div>
-              <a href="https://play.google.com/store/apps/details?id=nl.epb.book" description="Google Play Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"> </i>
-                google play</a>
-              <a href="https://apps.apple.com/us/app/edu-play-book/id1357681581?ls=1" description="App Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"> </i>
-                App Store</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-          <img src="Resources/Projects/DTT/edu-play-book-icon2.png" alt="" width="50%" class="center">
-        </div>
-      </div>
-      <div class="float-container">
-        <div class="float-child-left">
-          <h3>Fly Me to the Stars VR</h3>
-          <p>I was part of the team that developed an app enabling users to explore the solar system in VR and connect constellations. My role included quality assurance, bug fixing, and creating promotional material, such as the video shown here.</p>
-          <div class="link">
-            <div>
-              <a href="https://www.d-tt.nl/en/apps/fly-me-to-the-stars" description="website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe" onmouseover='displayDescriptionOnLinks("fas fa-globe");'></i>
-                website</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-            <div class="videocontainer">
-            <iframe src="https://www.youtube.com/embed/GfkcgnNqTl8?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="float-container">
-        <div class="float-child-left">
-          <h3>Flip Puzzle</h3>
-          <p>I was a core member of the development team for a game whose objective is to reach a chest by any means possible, whether it be flipping to "the other side" or collecting keys to unlock doors, while avoiding enemies and traps. The game features a story mode and a level editor, where players can create their own stages and share them online for others to compete on. I joined the project in its early stages and quickly became an integral part of the team. My contributions included implementing gameplay mechanics, animations, and the backend of the level editor and saving system. I also designed the Web API and worked with the web team to ensure the game could be played online.</p>
-          <div class="linkGrid">
-            <div>
-              <a href="https://play.google.com/store/apps/details?id=nl.dtt.puzzle" description="Google Play Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"> </i>
-                google play</a>
-              <a href="https://apps.apple.com/us/app/flip-puzzle/id1437655696" description="App Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"> </i>
-                App Store</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-          <img src="Resources/Projects/DTT/flip-puzzle-icon-new.png" alt="" width="50%" class="center">
-        </div>
-      </div>
-      <div class="float-container">
-        <div class="float-child-left">
-          <h3>OSR Star Finder</h3>
-          <p>I worked on the OSR Star Finder, an app that uses a phone or tablet to provide an augmented reality stargazing experience. The app projects the stars in real time, so when users point their phone at the sky, they can identify the star, its name, and the constellation it belongs to. My role included quality assurance, bug fixing, and creating promotional material for the app, as shown here.</p>
-          <div class="linkGrid">
-            <div>
-              <a href="https://play.google.com/store/apps/details?id=nl.DTT.OSR" description="Google Play Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"> </i>
-                google play</a>
-              <a href="https://apps.apple.com/us/app/osr-star-finder/id946123330?l=en&ls=1" description="App Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"> </i>
-                App Store</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-            <div class="videocontainer">
-            <iframe src="https://www.youtube.com/embed/6zwhu-_HCGg?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="float-container">
-        <div class="float-child-left">
-          <h3>At Mouse's house</h3>
-          <p>I collaborated with Pauline Baartmans, illustrator and animator of the children’s series ‘Thuis bij Muis’ (At Mouse’s House), to develop a reading app for kids. The app is powered by a CMS that enables easy addition and editing of stories. When I joined, the app already existed, but the client requested changes. As the project was smaller in scope, I served as the sole developer. I implemented the client’s changes, including animations, light/dark mode, refactoring, and numerous bug fixes. It was a great experience working with Pauline and delivering the updates to the client’s satisfaction.</p>
-          <div class="linkGrid">
-            <div>
-              <a href="https://www.d-tt.nl/en/apps/thuis-bij-muis-reading-app" description="website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe" onmouseover='displayDescriptionOnLinks("fas fa-globe");'></i>
-                website</a>
-              <a href="https://apps.apple.com/gb/app/thuis-bij-muis/id1248221767#?platform=iphone" description="App Store" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"> </i>
-                App Store</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-          <img src="Resources/Projects/DTT/tbm-icon.png" alt="" width="50%" class="center">
-        </div>
-      </div>
-      <div class="float-container">
-        <div class="float-child-left">
-          <h3>Randstad Office Configurator</h3>
-          <p>I developed a Unity-based web application for Randstad that allows users to digitally design and decorate every Randstad location worldwide. The application operates similarly to The Sims’ building and decorating features, with decorations generated through a CMS and costs automatically calculated. Users can share configurations and leave comments and suggestions on design features. My responsibilities included creating shaders, implementing post-processing effects, fixing bugs, and maintaining the overall project. I also created the promotional video for the application.</p>
-          <div class="link">
-            <div>
-              <a href="https://www.d-tt.nl/en/apps/randstad-office-configurator" description="website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe" onmouseover='displayDescriptionOnLinks("fas fa-globe");'></i>
-                website</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-      <div class="videocontainer">
-      <iframe src="https://www.youtube.com/embed/al0LurcjnEo?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!--YSOB Project-->
-    <section id="ysob-project-section" class="section" class="project">
-			<h2>Yokai - Spirits of Battle!</h2>
+  <section id="drilling-project-section" class="project">
+    <p class="project-back" id="drilling-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">3t Drilling Systems</h1>
+    <p class="project-detail-sub">Graphics Programmer · Aug 2021 – Jan 2022</p>
     <div class="videocontainer">
-  <iframe src="https://www.youtube.com/embed/lHUBv_Kvznk?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/lnlL-o2hhsI?enablejsapi=1" allowfullscreen></iframe>
     </div>
-      <p>I developed "Yokai - Spirits of Battle" a local multiplayer 3D fighting game inspired by monsters from Japanese folklore. Players select a character, choose a map, and battle for superiority. As the sole programmer and developer, I created all UI elements, sourced sounds, wrote scripts, and assembled the project in Unity. The 3D models for characters and stages were created by teammates. I designed the game with a modular approach, making it easy to add new characters by dragging and dropping the necessary elements into predefined slots. The game is available for PC and requires a controller; a download link to an executable version is provided.</p>
-      <div class="linkGrid">
-        <div>
-        <a href="https://github.com/MorganHJames/Yokai-Spirits-of-Battle" description="Github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" onmouseover='displayDescriptionOnLinks("fab fa-github");'></i>
-          github</a>
-        <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211984&authkey=AKYj8RUR-N94z6U" description="Download" rel="noopener noreferrer"><i class="fas fa-download"> </i>
-          download</a>
-        </div>
-      </div>
-      <div class="img-container">
-        <div>
-          <h3>Character Select</h3>
-          <img src="Resources/Projects/YSOB/Character select.png" alt="">
-        </div>
-        <div>
-          <h3>Map Select</h3>
-          <img src="Resources/Projects/YSOB/map select.png" alt="">
-        </div>
-        <div>
-          <h3>Pagoda</h3>
-          <img src="Resources/Projects/YSOB/pagoda.png" alt="">
-        </div>
-        <div>
-          <h3>Courtyard</h3>
-          <img src="Resources/Projects/YSOB/courtyard.png" alt="">
-        </div>
-        <div>
-          <h3>Pond</h3>
-          <img src="Resources/Projects/YSOB/Pond.png" alt="">
-        </div>
-        <div>
-          <h3>Sumo Ring</h3>
-          <img src="Resources/Projects/YSOB/sumo ring.png" alt="">
-        </div>
-      </div>
-    </section>
+    <div class="project-detail-body">
+      <p>At 3t Drilling Systems — the world's leading provider of drilling simulators with over 1,500 units deployed across more than 60 countries — I provided global deployment and performance support across three continents, ensuring mission-critical stability for clients including Shell, Chevron, and BP.</p>
+      <p>I developed and maintained rendering and visualisation applications for V-walls, Dome displays, and VR environments, and engineered a branding asset-swap system adopted by the majority of major enterprise clients and cited as a key factor in purchasing decisions.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://www.3tglobal.com/3t-drilling-systems/" target="_blank" rel="noopener" class="btn-ghost"><i class="fas fa-globe"></i> Website</a>
+    </div>
+  </section>
 
-    <!--OU Project-->
-    <section id="ou-project-section" class="section" class="project">
-			<h2>Open University VR</h2>
+  <section id="mogis-project-section" class="project">
+    <p class="project-back" id="mogis-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Mogi's Inferno</h1>
+    <p class="project-detail-sub">Epic MegaJam 2025 · Unreal Engine 5</p>
     <div class="videocontainer">
-    <iframe src="https://www.youtube.com/embed/s_TYE11XbJ0?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
-      <div class="float-container">
-        <div class="float-child-left">
-            <p>
-                I created a comprehensive suite of virtual reality simulations for healthcare education and training using Unity. These simulations cover various nursing procedures and leverage voice commands, haptic feedback, head tracking, and hand tracking. I designed robust, scalable, and reusable classes, components, and systems.
-                As part of a small team in an emerging field, I researched and implemented comfortable, effective interaction patterns. The simulations were deployed on Oculus Quest and released in a limited alpha. The suite isn’t publicly available; the link points to the Open University Learning Innovation team’s website.
-            </p>
-          <div class="link">
-            <div>
-              <a href="https://www.learninginnovation.info/vr/venepuncture" description="website" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe" onmouseover='displayDescriptionOnLinks("fas fa-globe");'></i>
-                website</a>
-            </div>
-          </div>  
-        </div>
-        <div class="float-child-right">
-            <div class="videocontainer">
-            <iframe src="https://www.youtube.com/embed/G1mR6F9H39c?enablejsapi=1" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <p>I developed simulations for procedures including injection techniques, observations, blood glucose measurement, catheterization, phlebotomy, respiratory exams, nasogastric tube insertion, venepuncture, and wound care. I also created an onboarding simulation to introduce users to the experience in a seamless, intuitive way.</p>
-        </div>
-      </div>
-      <div class="img-container">
-        <div>
-          <h3>Blood Glucose</h3>
-          <img src="Resources/Projects/OU/blood glucose.png" alt="">
-        </div>
-        <div>
-          <h3>Catheterization</h3>
-          <img src="Resources/Projects/OU/cath.jpg" alt="">
-        </div>
-        <div>
-          <h3>Blood Service</h3> 
-          <img src="Resources/Projects/OU/Bloodservice 1.png" alt="">
-        </div>
-        <div>
-          <h3>Respiratory</h3>
-          <img src="Resources/Projects/OU/Respiratory.png" alt="">
-        </div>
-        <div>
-          <h3>Blood Service</h3>
-          <img src="Resources/Projects/OU/Bloodservice 2.png" alt="">
-        </div>
-        <div>
-          <h3>Nasogastric</h3>
-          <img src="Resources/Projects/OU/Naso 1.png" alt="">
-        </div>
-        <div>
-          <h3>Venepuncture</h3>
-          <img src="Resources/Projects/OU/vene.png" alt="">
-        </div>
-        <div>
-          <h3>Wound Care</h3>
-          <img src="Resources/Projects/OU/Wound care.png" alt="">
-        </div>
-        <div>
-          <h3>Nasogastric</h3>
-          <img src="Resources/Projects/OU/Naso 2.png" alt="">
+      <iframe src="https://www.youtube.com/embed/VjjDc9QEiFg?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>Created for the Epic MegaJam 2025 with the theme "Here We Go Again," Mogi's Inferno is an intense escape challenge where players must learn and optimise their route through multiple attempts. Starting at the entrance of an apartment building, players have just 3 minutes to reach the evacuation helicopter waiting on the roof.</p>
+      <p>Through each "failed" attempt, players discover critical shortcuts, item locations, and hazards to avoid, gradually building the knowledge needed to complete a successful speedrun.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://gilesemery.itch.io/mogis-inferno" target="_blank" rel="noopener" class="btn-ghost"><i class="fas fa-globe"></i> itch.io</a>
+    </div>
+  </section>
+
+  <section id="ou-project-section" class="project">
+    <p class="project-back" id="ou-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Open University VR</h1>
+    <p class="project-detail-sub">Unity VR Developer · Jun 2020 – Jun 2021</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/s_TYE11XbJ0?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="float-container">
+      <div class="float-child-left">
+        <p>I created a comprehensive suite of virtual reality simulations for healthcare education and training using Unity. These simulations cover various nursing procedures and leverage voice commands, haptic feedback, head tracking, and hand tracking.</p>
+        <p>As part of a small team in an emerging field, I researched and implemented comfortable, effective interaction patterns. The simulations were deployed on Oculus Quest in a limited alpha. I also built the entire core VR infrastructure — locomotion, state management, text-to-speech, and testing foundations — from scratch.</p>
+        <div class="project-links">
+          <a href="https://www.learninginnovation.info/vr/venepuncture" target="_blank" rel="noopener" class="btn-ghost"><i class="fas fa-globe"></i> Website</a>
         </div>
       </div>
-    </section>
-  </main>
-  <!--Javascript-->
+      <div class="float-child-right">
+        <div class="videocontainer">
+          <iframe src="https://www.youtube.com/embed/G1mR6F9H39c?enablejsapi=1" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top:1rem;">Simulations covered: injection techniques, blood glucose measurement, catheterization, phlebotomy, respiratory exams, nasogastric tube insertion, venepuncture, wound care, and an onboarding experience.</p>
+      </div>
+    </div>
+    <div class="img-container">
+      <div><h3>Blood Glucose</h3><img src="Resources/Projects/OU/blood glucose.png" alt=""></div>
+      <div><h3>Catheterization</h3><img src="Resources/Projects/OU/cath.jpg" alt=""></div>
+      <div><h3>Blood Service</h3><img src="Resources/Projects/OU/Bloodservice 1.png" alt=""></div>
+      <div><h3>Respiratory</h3><img src="Resources/Projects/OU/Respiratory.png" alt=""></div>
+      <div><h3>Blood Service 2</h3><img src="Resources/Projects/OU/Bloodservice 2.png" alt=""></div>
+      <div><h3>Nasogastric</h3><img src="Resources/Projects/OU/Naso 1.png" alt=""></div>
+      <div><h3>Venepuncture</h3><img src="Resources/Projects/OU/vene.png" alt=""></div>
+      <div><h3>Wound Care</h3><img src="Resources/Projects/OU/Wound care.png" alt=""></div>
+      <div><h3>Nasogastric 2</h3><img src="Resources/Projects/OU/Naso 2.png" alt=""></div>
+    </div>
+  </section>
+
+  <section id="dtt-project-section" class="project">
+    <p class="project-back" id="dtt-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">DTT Apps</h1>
+    <p class="project-detail-sub">Unity Developer · Jul 2018 – Jul 2019</p>
+    <div class="float-container">
+      <div class="float-child-left">
+        <h3>Edu Play Book</h3>
+        <p>I was a main developer on Edu Play Book, an educational children's application featuring games, puzzles, and stories in multiple languages. I integrated a CMS, developed a recording feature, and designed many of the core games and interaction systems.</p>
+        <div class="linkGrid"><div>
+          <a href="https://play.google.com/store/apps/details?id=nl.epb.book" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+          <a href="https://apps.apple.com/us/app/edu-play-book/id1357681581" target="_blank" rel="noopener"><i class="fab fa-apple"></i> App Store</a>
+        </div></div>
+      </div>
+      <div class="float-child-right">
+        <img src="Resources/Projects/DTT/edu-play-book-icon2.png" alt="" width="50%" class="center">
+      </div>
+    </div>
+    <div class="float-container">
+      <div class="float-child-left">
+        <h3>Flip Puzzle</h3>
+        <p>I was a core member of the team for this puzzle game featuring a story mode and community level editor. I implemented gameplay mechanics, animations, the backend of the level editor, and designed the Web API enabling players to share custom stages online.</p>
+        <div class="linkGrid"><div>
+          <a href="https://play.google.com/store/apps/details?id=nl.dtt.puzzle" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Google Play</a>
+          <a href="https://apps.apple.com/us/app/flip-puzzle/id1437655696" target="_blank" rel="noopener"><i class="fab fa-apple"></i> App Store</a>
+        </div></div>
+      </div>
+      <div class="float-child-right">
+        <img src="Resources/Projects/DTT/flip-puzzle-icon-new.png" alt="" width="50%" class="center">
+      </div>
+    </div>
+    <div class="float-container">
+      <div class="float-child-left">
+        <h3>At Mouse's House</h3>
+        <p>Working solo as the developer on updates requested by illustrator Pauline Baartmans, I implemented animations, light/dark mode, refactoring, and numerous bug fixes for this CMS-powered children's reading app.</p>
+        <div class="linkGrid"><div>
+          <a href="https://apps.apple.com/gb/app/thuis-bij-muis/id1248221767" target="_blank" rel="noopener"><i class="fab fa-apple"></i> App Store</a>
+        </div></div>
+      </div>
+      <div class="float-child-right">
+        <img src="Resources/Projects/DTT/tbm-icon.png" alt="" width="50%" class="center">
+      </div>
+    </div>
+    <div class="float-container">
+      <div class="float-child-left">
+        <h3>Fly Me to the Stars VR</h3>
+        <p>Part of the team that developed a VR solar system exploration app. My role included QA, bug fixing, and creating promotional material.</p>
+        <div class="link"><div>
+          <a href="https://www.d-tt.nl/en/apps/fly-me-to-the-stars" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Website</a>
+        </div></div>
+      </div>
+      <div class="float-child-right">
+        <div class="videocontainer">
+          <iframe src="https://www.youtube.com/embed/GfkcgnNqTl8?enablejsapi=1" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="float-container">
+      <div class="float-child-left">
+        <h3>Randstad Office Configurator</h3>
+        <p>Unity-based web application allowing users to digitally design every Randstad location worldwide. I created shaders, implemented post-processing effects, and produced the promotional video.</p>
+        <div class="link"><div>
+          <a href="https://www.d-tt.nl/en/apps/randstad-office-configurator" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Website</a>
+        </div></div>
+      </div>
+      <div class="float-child-right">
+        <div class="videocontainer">
+          <iframe src="https://www.youtube.com/embed/al0LurcjnEo?enablejsapi=1" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="esd-project-section" class="project">
+    <p class="project-back" id="esd-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Emotional Speed Dating</h1>
+    <p class="project-detail-sub">Final Year Research Project · Unity / Python / CNN</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/oDybJPycFEU?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="float-container">
+      <div class="float-child-left">
+        <div class="pdf-wrapper">
+          <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FESD%2FCT6007%20Morgan%20James%20IRP-converted.pdf%3F%23zoom%3D70" height="800px" width="100%"></iframe>
+        </div>
+      </div>
+      <div class="float-child-right">
+        <p>Emotional Speed Dating is the outcome of a research project on human emotion detection and machine learning. I designed a study examining emotion detection and created a Unity/C# game using emotion as a game input.</p>
+        <p>The game simulates a speed dating event where the objective is to find true love by empathising with your dates (mimicking their emotions). A convolutional neural network powers the real-time emotion detection.</p>
+        <div class="linkGrid"><div>
+          <a href="https://github.com/MorganHJames/EmotionalSpeedDating" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211979&authkey=AHMEtKqXuBQ58B8" rel="noopener"><i class="fas fa-download"></i> Download</a>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cc-project-section" class="project">
+    <p class="project-back" id="cc-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Card Cavern</h1>
+    <p class="project-detail-sub">Roguelike card game · Google Play</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/uBeihP_CFmg?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>I developed Card Cavern, a roguelike card game using Unity and C#, in just under 12 weeks. The goal was to showcase my ability to bring a product to market within a set timeframe, including implementing monetization through in-app purchases. All art in the game was created by me.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/MorganHJames/CardCavern" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://play.google.com/store/apps/details?id=com.MorganHJames.CardCavern" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-google-play"></i> Google Play</a>
+    </div>
+    <div class="img-container">
+      <div><h3>Main Menu</h3><img src="Resources/Projects/CC/Main Menu.png" alt=""></div>
+      <div><h3>Attacking</h3><img src="Resources/Projects/CC/Attacking.png" alt=""></div>
+      <div><h3>Exploding</h3><img src="Resources/Projects/CC/Exploding.png" alt=""></div>
+      <div><h3>Game Over</h3><img src="Resources/Projects/CC/Game Over.png" alt=""></div>
+      <div><h3>Boomerang</h3><img src="Resources/Projects/CC/Boomerang.png" alt=""></div>
+      <div><h3>Discarding</h3><img src="Resources/Projects/CC/Discarding.png" alt=""></div>
+    </div>
+  </section>
+
+  <section id="atwu-project-section" class="project">
+    <p class="project-back" id="atwu-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">All the Way USA!</h1>
+    <p class="project-detail-sub">AR Mobile App · Unity / Vuforia</p>
+    <img src="Resources/Projects/ATWU/banner.jpg" style="width:100%;border-radius:var(--radius);margin-bottom:1.5rem;" alt="">
+    <div class="float-container">
+      <div class="float-child-left">
+        <div class="pdf-wrapper">
+          <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FATWU%2FDesignDocument.pdf%3F%23zoom%3D70" height="800px" width="100%"></iframe>
+        </div>
+      </div>
+      <div class="float-child-right">
+        <p>I created All the Way USA! to increase my knowledge of the individual US states. The app displays a 3D map of the USA on a dollar bill when the camera detects one. Users can scale the map, toggle state names, abbreviations, and capital cities, select individual states for flag, seal, and history info, and test their knowledge with three quizzes.</p>
+        <div class="linkGrid"><div>
+          <a href="https://github.com/MorganHJames/All-the-way-USA-" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211982&authkey=ABvMkdSjI1ksOTY" rel="noopener"><i class="fas fa-download"></i> Download APK</a>
+        </div></div>
+      </div>
+    </div>
+    <div class="img-container">
+      <div><h3>Test Your Knowledge</h3><img src="Resources/Projects/ATWU/test.jpg" alt=""></div>
+      <div><h3>State Info</h3><img src="Resources/Projects/ATWU/info.jpg" alt=""></div>
+      <div><h3>Scaled Small</h3><img src="Resources/Projects/ATWU/small.jpg" alt=""></div>
+      <div><h3>Scaled Large</h3><img src="Resources/Projects/ATWU/large.jpg" alt=""></div>
+      <div><h3>Start Screen</h3><img src="Resources/Projects/ATWU/start.jpg" alt=""></div>
+      <div><h3>3D Model</h3><img src="Resources/Projects/ATWU/full map.png" alt=""></div>
+    </div>
+  </section>
+
+  <section id="ust-project-section" class="project">
+    <p class="project-back" id="ust-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Unity Shader Tutorial</h1>
+    <p class="project-detail-sub">25,000+ views · 95% positive rating</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/fp89rfT4tqI?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>I created a tutorial on shaders in Unity to deepen my understanding and share that knowledge with others. The tutorial teaches the basics of shader programming and enables learners to create their own shaders in C# and HLSL.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211980&authkey=AIfJYVjYCkO60VU" rel="noopener" class="btn-ghost"><i class="fas fa-download"></i> Download</a>
+    </div>
+    <div class="pdf-wrapper">
+      <iframe src="Resources/pdf-viewer/viewer.html?file=%2FResources%2FProjects%2FUST%2FUnity%20Shader%20Tutorial.pdf%3F%23zoom%3D110" height="1250px" width="100%"></iframe>
+    </div>
+  </section>
+
+  <section id="kr-project-section" class="project">
+    <p class="project-back" id="kr-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Koopa's Revenge</h1>
+    <p class="project-detail-sub">Game Boy · C / C++</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/n846uP1NFVc?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>I created Koopa's Revenge, a game for the Game Boy, with the goal of incorporating both sprites and particle effects into the game scene. Developed in C/C++ using Visual Studio and the NO$GBA emulator/debugger — a great learning experience for understanding hardware programming fundamentals.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/MorganHJames/KoopaRevenge" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <img src="Resources/Projects/KR/gif.gif" style="width:100%;border-radius:var(--radius);" alt="">
+  </section>
+
+  <section id="ls-project-section" class="project">
+    <p class="project-back" id="ls-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Loot Swipe</h1>
+    <p class="project-detail-sub">Mobile maze game built in 24 hours · Google Play</p>
+    <img src="Resources/Projects/LS/long.jpg" style="width:100%;border-radius:var(--radius);margin-bottom:1.5rem;" alt="">
+    <div class="project-detail-body">
+      <p>I created Loot Swipe in under 24 hours using C# and Unity. The objective is to collect loot navigating through a procedurally generated maze of floating crates. The maze is generated using Prim's algorithm and players can adjust its complexity.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/MorganHJames/LootSwipe" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://play.google.com/store/apps/details?id=com.MorganJames.LootSwipe" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-google-play"></i> Google Play</a>
+    </div>
+    <div class="img-container">
+      <div><h3>Menu</h3><img src="Resources/Projects/LS/menu.jpg" alt=""></div>
+      <div><h3>Gameplay</h3><img src="Resources/Projects/LS/game.jpg" alt=""></div>
+      <div><h3>Settings</h3><img src="Resources/Projects/LS/igmenu.jpg" alt=""></div>
+    </div>
+  </section>
+
+  <section id="ysob-project-section" class="project">
+    <p class="project-back" id="ysob-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Yokai — Spirits of Battle!</h1>
+    <p class="project-detail-sub">Local multiplayer 3D fighting game · Unity</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/lHUBv_Kvznk?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>I developed Yokai — Spirits of Battle!, a local multiplayer 3D fighting game inspired by monsters from Japanese folklore. As sole programmer, I created all UI elements, wrote all scripts, and assembled the project in Unity using a modular character system designed for easy expansion.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/MorganHJames/Yokai-Spirits-of-Battle" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211984&authkey=AKYj8RUR-N94z6U" rel="noopener" class="btn-ghost"><i class="fas fa-download"></i> Download</a>
+    </div>
+    <div class="img-container">
+      <div><h3>Character Select</h3><img src="Resources/Projects/YSOB/Character select.png" alt=""></div>
+      <div><h3>Map Select</h3><img src="Resources/Projects/YSOB/map select.png" alt=""></div>
+      <div><h3>Pagoda</h3><img src="Resources/Projects/YSOB/pagoda.png" alt=""></div>
+      <div><h3>Courtyard</h3><img src="Resources/Projects/YSOB/courtyard.png" alt=""></div>
+      <div><h3>Pond</h3><img src="Resources/Projects/YSOB/Pond.png" alt=""></div>
+      <div><h3>Sumo Ring</h3><img src="Resources/Projects/YSOB/sumo ring.png" alt=""></div>
+    </div>
+  </section>
+
+  <section id="mii-project-section" class="project">
+    <p class="project-back" id="mii-back"><i class="fas fa-arrow-left"></i> All projects</p>
+    <h1 class="project-detail-title">Character Creator</h1>
+    <p class="project-detail-sub">Wii Mii-style character creator · Unity / C#</p>
+    <div class="videocontainer">
+      <iframe src="https://www.youtube.com/embed/S37pAxWAH8M?enablejsapi=1" allowfullscreen></iframe>
+    </div>
+    <div class="project-detail-body">
+      <p>I developed a character creator that replicates the functionality of the Nintendo Wii Mii creator. This PC application enables users to create fully custom characters — height, weight, voice, animation style, skin colour, hair, eyes, accessories, clothing — all customizable with any colour. Includes random generation, character lobby, and a role call parade feature.</p>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/MorganHJames/CharacterCreator" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://onedrive.live.com/download?cid=E74E1D1D1F83AFEA&resid=E74E1D1D1F83AFEA%211983&authkey=AOqtfzRAWcPB6eQ" rel="noopener" class="btn-ghost"><i class="fas fa-download"></i> Download</a>
+    </div>
+    <div class="img-container">
+      <div><h3>General Options</h3><img src="Resources/Projects/MII/general.png" alt=""></div>
+      <div><h3>Wandering</h3><img src="Resources/Projects/MII/Wandering.png" alt=""></div>
+      <div><h3>Upper Body</h3><img src="Resources/Projects/MII/chest selectors.png" alt=""></div>
+      <div><h3>Lined Up</h3><img src="Resources/Projects/MII/lined up.png" alt=""></div>
+      <div><h3>Color Picker</h3><img src="Resources/Projects/MII/color selector.png" alt=""></div>
+      <div><h3>Picked Up</h3><img src="Resources/Projects/MII/picked up.png" alt=""></div>
+    </div>
+  </section>
+
   <script src="index.js"></script>
+  <script>
+    // Back buttons on project detail pages
+    const backs = [
+      'transfr-back','spaceforge-back','drilling-back','mogis-back','ou-back',
+      'dtt-back','esd-back','cc-back','atwu-back','ust-back','kr-back',
+      'ls-back','ysob-back','mii-back'
+    ];
+    backs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('click', () => { location.hash = 'projects'; });
+    });
+    // Hero CTA buttons
+    document.getElementById('hero-projects')?.addEventListener('click', e => {
+      e.preventDefault(); location.hash = 'projects';
+    });
+    document.getElementById('hero-contact')?.addEventListener('click', e => {
+      e.preventDefault(); location.hash = 'contact';
+    });
+  </script>
+</body>
 </html>
