@@ -554,3 +554,101 @@ section.visible { display: block; }
   .hero-stats { gap: 1.5rem; }
   .about-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Lightbox ─────────────────────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+}
+#lightbox.open { display: flex; }
+
+#lb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+}
+
+#lb-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+#lb-img {
+  max-width: 80vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+#lb-prev, #lb-next {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+#lb-prev:hover, #lb-next:hover { background: var(--accent); border-color: var(--accent); }
+
+#lb-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+#lb-close:hover { color: var(--accent); }
+
+/* ── Abbey screenshot grid ───────────────────────────────── */
+.abbey-screenshots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.abbey-screenshots > div {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--trans);
+}
+.abbey-screenshots > div:hover { border-color: var(--accent); }
+.abbey-screenshots h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.6rem 0.75rem;
+}
+.abbey-screenshots img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  background: #0d0d14;
+}
+@media (max-width: 640px) {
+  .abbey-screenshots { grid-template-columns: 1fr; }
+}

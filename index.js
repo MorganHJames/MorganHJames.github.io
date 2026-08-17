@@ -28,14 +28,34 @@ const TOP_NAV = {
   'about':   'about-me',
   'resume':  'resume',
   'contact': 'contact-me',
+  'projects': 'projects',
 };
+
+// Project sub-routes that should highlight Projects nav
+const PROJECT_ROUTES = new Set([
+  'projects','transfr','spaceforge','drilling','mogis','ou',
+  'dtt','esd','cc','atwu','ust','kr','ls','ysob','mii','abbey'
+]);
 
 function getRoute() {
   return (location.hash || '').replace(/^#\/?/, '').toLowerCase().trim();
 }
 
+// ── Stop all YouTube audio properly ──────────────────────────
+function stopAllVideos() {
+  document.querySelectorAll('iframe[src*="youtube"]').forEach(iframe => {
+    // Replace src with itself — forces iframe reload and kills audio
+    const src = iframe.src;
+    iframe.src = '';
+    iframe.src = src;
+  });
+}
+
 function navigateTo(route) {
-  const sectionId = ROUTES[route] || 'projects-section';
+  const sectionId = ROUTES[route] !== undefined ? ROUTES[route] : 'projects-section';
+
+  // Stop videos before hiding sections
+  stopAllVideos();
 
   // Hide all sections
   document.querySelectorAll('section').forEach(s => s.classList.remove('visible'));
@@ -44,23 +64,17 @@ function navigateTo(route) {
   const target = document.getElementById(sectionId);
   if (target) target.classList.add('visible');
 
-  // Update nav active state
+  // Update nav active state — nothing active on hero/home
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const topRoute = ['about','resume','contact'].find(r => route === r || route.startsWith(r));
-  if (topRoute && TOP_NAV[topRoute]) {
-    const navEl = document.getElementById(TOP_NAV[topRoute]);
+  if (route === '' || route === 'home') {
+    // No nav item active on hero
+  } else if (TOP_NAV[route]) {
+    const navEl = document.getElementById(TOP_NAV[route]);
     if (navEl) navEl.classList.add('active');
-  } else {
+  } else if (PROJECT_ROUTES.has(route)) {
     const projNav = document.getElementById('projects');
     if (projNav) projNav.classList.add('active');
   }
-
-  // Stop any playing YouTube videos
-  document.querySelectorAll('iframe[src*="youtube"]').forEach(iframe => {
-    try {
-      iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'stopVideo' }), '*');
-    } catch(_) {}
-  });
 
   window.scrollTo(0, 0);
 }
@@ -74,7 +88,11 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey) return;
     e.preventDefault();
     const route = (a.getAttribute('href') || '').replace(/^#\/?/, '');
-    location.hash = route;
+    if (location.hash.replace(/^#\/?/, '') === route) {
+      navigateTo(route);
+    } else {
+      location.hash = route;
+    }
   });
 });
 
@@ -107,6 +125,86 @@ function bindHeroCTAs() {
   if (hc) hc.addEventListener('click', e => { e.preventDefault(); location.hash = 'contact'; });
 }
 
+// Nav logo → home
+function bindNavLogo() {
+  const logo = document.querySelector('.nav-logo');
+  if (logo) {
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', () => {
+      location.hash = '';
+      navigateTo('');
+    });
+  }
+}
+
+// ── Lightbox for project images ───────────────────────────────
+function buildLightbox() {
+  const lb = document.createElement('div');
+  lb.id = 'lightbox';
+  lb.innerHTML = `
+    <div id="lb-overlay"></div>
+    <div id="lb-content">
+      <button id="lb-prev"><i class="fas fa-chevron-left"></i></button>
+      <img id="lb-img" src="" alt="">
+      <button id="lb-next"><i class="fas fa-chevron-right"></i></button>
+      <button id="lb-close"><i class="fas fa-times"></i></button>
+    </div>
+  `;
+  document.body.appendChild(lb);
+
+  let images = [];
+  let current = 0;
+
+  function show(idx) {
+    current = (idx + images.length) % images.length;
+    document.getElementById('lb-img').src = images[current].src;
+    document.getElementById('lb-img').alt = images[current].alt;
+  }
+
+  function open(imgs, idx) {
+    images = imgs;
+    show(idx);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    images = [];
+  }
+
+  document.getElementById('lb-overlay').addEventListener('click', close);
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.getElementById('lb-prev').addEventListener('click', () => show(current - 1));
+  document.getElementById('lb-next').addEventListener('click', () => show(current + 1));
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+
+  // Bind all img-container images
+  function bindImages() {
+    document.querySelectorAll('.img-container').forEach(container => {
+      const imgs = Array.from(container.querySelectorAll('img'));
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => open(imgs, idx));
+      });
+    });
+    // Also bind abbey standalone screenshots
+    document.querySelectorAll('.abbey-screenshots img').forEach((img, idx, list) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => open(Array.from(list), idx));
+    });
+  }
+
+  return { bindImages };
+}
+
 // YouTube fallbacks
 function setupYouTubeFallbacks() {
   document.querySelectorAll('iframe[src*="youtube.com/embed/"]').forEach(iframe => {
@@ -124,7 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
   bindDataRoutes();
   bindBackButtons();
   bindHeroCTAs();
+  bindNavLogo();
   setupYouTubeFallbacks();
+  const lb = buildLightbox();
+  lb.bindImages();
 
   // Initial route
   const initial = getRoute();
